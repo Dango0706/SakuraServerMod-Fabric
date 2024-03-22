@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "sakuraserver",
+	"version": "${version}",
+	"name": "樱花服务器专用模组",
+	"description": "字面意思.",
+	"authors": [
+		"团子"
+	],
+	"contact": {
+		"homepage": "none",
+		"sources": "none"
+	},
+	"license": "Apache License 2.0",
+	"icon": "assets/sakuraserver/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.tuanzi.SakuraServer"
+		],
+		"client": [
+			"me.tuanzi.SakuraServerClient"
+		],
+		"fabric-datagen": [
+			"me.tuanzi.SakuraServerDataGenerator"
+		]
+	},
+	"mixins": [
+		"sakuraserver.mixins.json",
+		{
+			"config": "sakuraserver.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
