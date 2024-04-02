@@ -1,18 +1,18 @@
 {
 	"schemaVersion": 1,
-	"id": "sakuraserver",
+	"id": "sakura_server",
 	"version": "${version}",
 	"name": "樱花服务器专用模组",
-	"description": "字面意思.",
+	"description": "一个简单的为服务器添加乐趣的模组.",
 	"authors": [
 		"团子"
 	],
 	"contact": {
-		"homepage": "none",
-		"sources": "none"
+		"homepage": "https://modrinth.com/mod/sakura_server_mod",
+		"sources": "https://github.com/Dango0706/SakuraServerMod-Fabric"
 	},
 	"license": "Apache License 2.0",
-	"icon": "assets/sakuraserver/icon.png",
+	"icon": "assets/sakura_server/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
@@ -23,12 +23,15 @@
 		],
 		"fabric-datagen": [
 			"me.tuanzi.SakuraServerDataGenerator"
+		],
+		"modmenu":[
+			"me.tuanzi.config.Modmenu"
 		]
 	},
 	"mixins": [
-		"sakuraserver.mixins.json",
+		"sakura_server.mixins.json",
 		{
-			"config": "sakuraserver.client.mixins.json",
+			"config": "sakura_server.client.mixins.json",
 			"environment": "client"
 		}
 	],
@@ -39,6 +42,7 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"yet-another-config-lib-fabric": "*",
+		"modmenu": "*"
 	}
 }

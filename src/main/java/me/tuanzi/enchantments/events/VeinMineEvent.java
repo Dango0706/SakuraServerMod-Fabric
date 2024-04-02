@@ -15,8 +15,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-import static me.tuanzi.SakuraServer.MODID;
-import static me.tuanzi.SakuraServer.VEIN_MINE;
+import static me.tuanzi.SakuraServer.*;
 
 public class VeinMineEvent implements PlayerBlockBreakEvents.After {
 
@@ -132,6 +131,7 @@ public class VeinMineEvent implements PlayerBlockBreakEvents.After {
     }
 
     public boolean veinMine(ServerWorld world, ServerPlayerEntity player, BlockPos pos, BlockState state) {
+        //TODO:增加Config设置.
         //最大数量
         int maxCount = EnchantmentHelper.getLevel(VEIN_MINE,player.getMainHandStack()) * 16;
         //需要破坏的方块
@@ -160,9 +160,9 @@ public class VeinMineEvent implements PlayerBlockBreakEvents.After {
                             exhaustion -= 4;
                             //减饱食度或饱和
                             if (player.getHungerManager().getSaturationLevel() > 0) {
-                                player.getHungerManager().setSaturationLevel(player.getHungerManager().getSaturationLevel() - 1);
+                                player.getHungerManager().setSaturationLevel(Math.max(player.getHungerManager().getSaturationLevel() - 1, 0));
                             } else {
-                                player.getHungerManager().setFoodLevel(player.getHungerManager().getFoodLevel() - 1);
+                                player.getHungerManager().setFoodLevel(Math.max(player.getHungerManager().getFoodLevel() - 1, 0));
                             }
                         }
                         //<4了那就加上去
@@ -174,13 +174,15 @@ public class VeinMineEvent implements PlayerBlockBreakEvents.After {
                         return false;
                     //加一
                     i++;
-                }else{
+                } else {
                     //饱食度在挖掘过程中不够了,中断挖掘.
                     player.sendMessage(Text.translatable("enchantment." + MODID + ".vein_mine.need_food"));
                     return false;
                 }
             }
         }
+        printLog("连锁破坏了:" + i);
+        player.increaseStat(VEIN_MINE_COUNT, i);
         return true;
     }
 

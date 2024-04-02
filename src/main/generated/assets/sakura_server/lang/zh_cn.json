@@ -1,0 +1,19 @@
+{
+  "block.sakura_server.lift": "电梯",
+  "commands.sakura_server.error.not_player": "此命令非玩家发出.",
+  "commands.sakura_server.removeLore.ok": "成功清除身上%d件物品的lore信息.",
+  "effect.sakura_server.lift_cd": "电梯使用冷却",
+  "enchantment.sakura_server.soul_bound": "§6灵魂绑定",
+  "enchantment.sakura_server.vein_mine": "§a连锁挖矿",
+  "enchantment.sakura_server.vein_mine.need_food": "你打算饿死你自己?吃点东西在连锁挖矿吧!",
+  "item.sakura_server.emerald_apple": "绿宝石苹果",
+  "itemGroup.sakura_server.item_group": "樱花服务器",
+  "key.category.sakura_server": "樱花服务器",
+  "key.sakura_server.vein_mine": "连锁挖矿",
+  "stat.sakura_server.highest_damage": "造成最高的一次伤害",
+  "stat.sakura_server.highest_hurt": "受到最高的一次伤害",
+  "stat.sakura_server.lift_all": "使用电梯总次数",
+  "stat.sakura_server.lift_down": "使用电梯下降的次数",
+  "stat.sakura_server.lift_up": "使用电梯上升的次数",
+  "stat.sakura_server.vein_mine_count": "连锁挖掘方块总数量"
+}

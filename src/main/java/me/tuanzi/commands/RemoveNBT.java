@@ -19,7 +19,7 @@ public class RemoveNBT {
 
     public static void removeLore(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("removelore")
-                .executes((ctx) -> remove(ctx)));
+                .executes(RemoveNBT::remove));
     }
 
     public static int remove(CommandContext<ServerCommandSource> ctx) {

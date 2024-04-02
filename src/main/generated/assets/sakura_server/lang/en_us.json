@@ -1,0 +1,19 @@
+{
+  "block.sakura_server.lift": "lift",
+  "commands.sakura_server.error.not_player": "This command is not issued by the player.",
+  "commands.sakura_server.removeLore.ok": "Successfully cleared the lore information of %d item.",
+  "effect.sakura_server.lift_cd": "lift CD",
+  "enchantment.sakura_server.soul_bound": "§6SoulBound",
+  "enchantment.sakura_server.vein_mine": "§aVeinMine",
+  "enchantment.sakura_server.vein_mine.need_food": "You're hungry. Go get something to eat and chain mine!",
+  "item.sakura_server.emerald_apple": "EmeraldApple",
+  "itemGroup.sakura_server.item_group": "Sakura Server",
+  "key.category.sakura_server": "Sakura Server",
+  "key.sakura_server.vein_mine": "VeinMine",
+  "stat.sakura_server.highest_damage": "Deals the highest amount of damage at once",
+  "stat.sakura_server.highest_hurt": "Highest single damage taken",
+  "stat.sakura_server.lift_all": "Total number of times the elevator was used",
+  "stat.sakura_server.lift_down": "Number of elevator descents used",
+  "stat.sakura_server.lift_up": "Number of elevator rises used",
+  "stat.sakura_server.vein_mine_count": "Total number of vein mine cubes"
+}

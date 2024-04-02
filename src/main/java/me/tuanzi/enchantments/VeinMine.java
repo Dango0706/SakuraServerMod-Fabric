@@ -22,7 +22,7 @@ public class VeinMine extends Enchantment {
 
     @Override
     public int getMinPower(int level) {
-        return 15;
+        return 15 + (level - 1) * 9;
     }
 
     @Override
