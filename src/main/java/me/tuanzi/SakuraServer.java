@@ -110,9 +110,7 @@ public class SakuraServer implements ModInitializer {
 
         //reg
         //test
-        if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
-            Registry.register(Registries.ITEM, new Identifier(MODID, "test"), TEST_RES);
-        }
+        Registry.register(Registries.ITEM, new Identifier(MODID, "test"), TEST_RES);
 
         //block
         Registry.register(Registries.BLOCK, new Identifier(MODID, "lift"), LIFT);

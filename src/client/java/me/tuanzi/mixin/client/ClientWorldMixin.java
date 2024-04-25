@@ -35,12 +35,13 @@ public abstract class ClientWorldMixin extends World {
 
     @Inject(method = "getBlockParticle", at = @At("RETURN"), cancellable = true)
     private void getBlockParticle(CallbackInfoReturnable<Block> cir) {
-        Item item = this.client.player.getMainHandStack().getItem().asItem();
-        if (item == Items.LIGHT && cir.getReturnValue() == null) {
-            BlockItem blockItem = (BlockItem) item;
-            cir.setReturnValue(blockItem.getBlock());
+        if(this.client.player != null){
+            Item item = this.client.player.getMainHandStack().getItem().asItem();
+            if (item == Items.LIGHT && cir.getReturnValue() == null) {
+                BlockItem blockItem = (BlockItem) item;
+                cir.setReturnValue(blockItem.getBlock());
+            }
         }
-
     }
 
 }
