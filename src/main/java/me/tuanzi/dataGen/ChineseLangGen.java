@@ -38,7 +38,7 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc1", "技能:龙吼");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc2", "右键使用,CD:15s,持续时间:10s");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc3", "消耗当前生命值的30%,获得龙吼.");
-        translationBuilder.add("item.sakura_server.dragon_sword.skill.desc4", "龙吼:+8攻击力,+80%攻击速度,+30%移动速度");
+        translationBuilder.add("item.sakura_server.dragon_sword.skill.desc4", "龙吼:+4攻击力,+80%攻击速度,+30%移动速度");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc5", "缓慢恢复20%生命值上限的生命值.");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc6", "切换武器后失效.");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc1", "技能:星辉之力");

@@ -1,0 +1,11 @@
+{
+  "enchantment.sakura_server.soul_bound": "§6灵魂绑定",
+  "commands.sakura_server.error.not_player": "此命令非玩家发出.",
+  "commands.sakura_server.removeLore.ok": "成功清除身上%d件物品的lore信息.",
+  "enchantment.sakura_server.vein_mine": "§a连锁挖矿",
+  "key.category.sakura_server": "樱花服务器",
+  "key.sakura_server.vein_mine": "连锁挖矿",
+  "enchantment.sakura_server.vein_mine.need_food": "你打算饿死你自己?吃点东西在连锁挖矿吧!",
+  "block.sakura_server.lift": "电梯",
+  "itemGroup.sakura_server.item_group": "樱花服务器"
+}

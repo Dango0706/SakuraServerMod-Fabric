@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "sakura_server:block/lift",
+    "up": "sakura_server:block/lift",
+    "north": "sakura_server:block/lift",
+    "east": "sakura_server:block/lift",
+    "south": "sakura_server:block/lift",
+    "west": "sakura_server:block/lift",
+    "particle": "sakura_server:block/lift"
+  },
+  "render_type": "solid"
+}
