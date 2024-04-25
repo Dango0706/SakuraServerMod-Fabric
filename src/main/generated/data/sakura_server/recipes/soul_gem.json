@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "b": {
+      "item": "minecraft:nether_star"
+    },
+    "c": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "pattern": [
+    "aca",
+    "cbc",
+    "aca"
+  ],
+  "result": {
+    "item": "sakura_server:soul_gem"
+  }
+}

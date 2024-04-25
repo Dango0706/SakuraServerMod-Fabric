@@ -9,8 +9,7 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 
-import static me.tuanzi.SakuraServer.EMERALD_APPLE;
-import static me.tuanzi.SakuraServer.LIFT;
+import static me.tuanzi.SakuraServer.*;
 
 public class RecipeGen extends FabricRecipeProvider {
 
@@ -26,29 +25,51 @@ public class RecipeGen extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter exporter) {
         //电梯
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC,LIFT)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, LIFT)
                 .pattern("aaa")
                 .pattern("aba")
                 .pattern("aaa")
                 .input('a', Items.IRON_BLOCK)
-                .input('b',Items.ENDER_PEARL)
+                .input('b', Items.ENDER_PEARL)
                 .criterion(FabricRecipeProvider.hasItem(Items.IRON_BLOCK),
                         FabricRecipeProvider.conditionsFromItem(Items.IRON_BLOCK))
                 .criterion(FabricRecipeProvider.hasItem(Items.ENDER_PEARL),
                         FabricRecipeProvider.conditionsFromItem(Items.ENDER_PEARL))
                 .offerTo(exporter);
         //绿宝石苹果
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC,EMERALD_APPLE)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, EMERALD_APPLE)
                 .pattern("aaa")
                 .pattern("aba")
                 .pattern("aaa")
                 .input('a', Items.EMERALD)
-                .input('b',Items.APPLE)
+                .input('b', Items.APPLE)
                 .criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
                         FabricRecipeProvider.conditionsFromItem(Items.EMERALD))
                 .criterion(FabricRecipeProvider.hasItem(Items.APPLE),
                         FabricRecipeProvider.conditionsFromItem(Items.APPLE))
                 .offerTo(exporter);
+        //灵魂宝石
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, SOUL_GEM)
+                .pattern("aca")
+                .pattern("cbc")
+                .pattern("aca")
+                .input('a', Items.DIAMOND)
+                .input('b', Items.NETHER_STAR)
+                .input('c', Items.EMERALD)
+                .criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
+                        FabricRecipeProvider.conditionsFromItem(Items.EMERALD))
+                .criterion(FabricRecipeProvider.hasItem(Items.APPLE),
+                        FabricRecipeProvider.conditionsFromItem(Items.APPLE))
+                .criterion(FabricRecipeProvider.hasItem(Items.NETHER_STAR),
+                        FabricRecipeProvider.conditionsFromItem(Items.NETHER_STAR))
+                .offerTo(exporter);
+        //光源方块
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT)
+                .input(Items.TORCH)
+                .criterion(FabricRecipeProvider.hasItem(Items.TORCH),
+                        FabricRecipeProvider.conditionsFromItem(Items.LIGHT)).criterion(FabricRecipeProvider.hasItem(Items.TORCH),
+                        FabricRecipeProvider.conditionsFromItem(Items.TORCH)).offerTo(exporter);
+
     }
 
 }

@@ -24,6 +24,16 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add(LIFT, "lift");
         //item
         translationBuilder.add(EMERALD_APPLE,"EmeraldApple");
+        translationBuilder.add(SOUL_GEM,"SoulGem");
+        translationBuilder.add(DRAGON_SWORD,"DragonSword");
+        translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "You don't own him, you can't bind him!");
+        translationBuilder.add("item.sakura_server.soul_gem.fail.not_tamed", "He's not tamed yet! Unable to bind");
+        translationBuilder.add("item.sakura_server.soul_gem.fail.has_entity", "This SoulGem already has a binding!");
+        translationBuilder.add("item.sakura_server.soul_gem.fail.not_found", "There are no creatures bound to you within 40 squares~");
+        translationBuilder.add("item.sakura_server.soul_gem.respawn", "Resurrect! My love!!!");
+        translationBuilder.add("item.sakura_server.soul_gem.found", "Your dog is in x:%d,y:%d,z:%d ♪ He's shining ♪");
+        translationBuilder.add("item.sakura_server.soul_gem.uuid", "bound creature,UUID:");
+        translationBuilder.add("item.sakura_server.soul_gem.dead", "The creature you bound is dead!!His SoulGem sparkles....");
         //enchantment
         translationBuilder.add(SOUL_BOUND, "§6SoulBound");
         translationBuilder.add(VEIN_MINE, "§aVeinMine");

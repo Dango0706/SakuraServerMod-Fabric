@@ -1,5 +1,9 @@
-// 1.20.4	2024-04-02T17:25:54.5547666	樱花服务器专用模组/Recipes
+// 1.20.4	2024-04-25T01:17:01.1718873	樱花服务器专用模组/Recipes
+6c91103d22186d0765dc0552ac57b85d536bee70 data\sakura_server\advancements\recipes\misc\soul_gem.json
+71102c5305615538b77c9474bc0d78b02662d09e data\sakura_server\recipes\soul_gem.json
 4f72a5b4aa5445c9c3250ed36dbe1af56ba558fe data\sakura_server\recipes\emerald_apple.json
 c5775c057657a8433772eb0daf4d379a3b9d4a57 data\sakura_server\advancements\recipes\misc\lift.json
+8b2c833f95d907b58b16e8696bed51bd55d35e37 data\sakura_server\advancements\recipes\misc\light.json
 d04fc275f23637effdedf46e463c70e48102dbfd data\sakura_server\recipes\lift.json
 bd7f98e3516ca0b1b5ee8a36c649476445535aac data\sakura_server\advancements\recipes\misc\emerald_apple.json
+77e6bb7a725835aadf585ff3e3302d0b07216604 data\sakura_server\recipes\light.json

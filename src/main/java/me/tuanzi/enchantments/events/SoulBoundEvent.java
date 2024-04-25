@@ -29,13 +29,15 @@ public class SoulBoundEvent implements ServerPlayerEvents.AfterRespawn, ServerLi
      */
     @Override
     public void afterRespawn(ServerPlayerEntity oldPlayer, ServerPlayerEntity newPlayer, boolean alive) {
-        String name = newPlayer.getName().getString();
-        if (SoulBoundItems.containsKey(name)) {
-            ArrayList<ItemStack> itemStacks = new ArrayList<>(SoulBoundItems.get(name));
-            for (ItemStack itemStack : itemStacks) {
-                newPlayer.giveItemStack(itemStack);
+        if (!newPlayer.getWorld().isClient()) {
+            String name = newPlayer.getName().getString();
+            if (SoulBoundItems.containsKey(name)) {
+                ArrayList<ItemStack> itemStacks = new ArrayList<>(SoulBoundItems.get(name));
+                for (ItemStack itemStack : itemStacks) {
+                    newPlayer.giveItemStack(itemStack);
+                }
+                SoulBoundItems.remove(name);
             }
-            SoulBoundItems.remove(name);
         }
     }
 
@@ -49,39 +51,43 @@ public class SoulBoundEvent implements ServerPlayerEvents.AfterRespawn, ServerLi
      */
     @Override
     public boolean allowDeath(LivingEntity entity, DamageSource damageSource, float damageAmount) {
-        //检测世界规则
-        if(entity.getEntityWorld().getGameRules().getBoolean(GameRules.KEEP_INVENTORY))
-            return true;
-        //检测不死图腾
-        for (Hand hand : Hand.values()) {
-            ItemStack itemStack2 = entity.getStackInHand(hand);
-            if (!itemStack2.isOf(Items.TOTEM_OF_UNDYING))
+        if (!entity.getWorld().isClient) {
+            //检测世界规则
+            if (entity.getEntityWorld().getGameRules().getBoolean(GameRules.KEEP_INVENTORY))
                 return true;
-        }
-        //检测灵魂绑定
-        if (entity instanceof ServerPlayerEntity serverPlayer) {
-            //记录位置
-            ArrayList<Integer> slots = new ArrayList<>();
-            //灵魂绑定的物品
-            ArrayList<ItemStack> soulBoundItems = new ArrayList<>();
-            //先获取所有掉落物
-            for (int i = 0; i < 200; i++) {
-                if (serverPlayer.getInventory().getStack(i).getItem() != Items.AIR) {
-                    //记录物品位置
-                    slots.add(i);
-                }
+            //检测不死图腾
+            for (Hand hand : Hand.values()) {
+                ItemStack itemStack2 = entity.getStackInHand(hand);
+                if (itemStack2.isOf(Items.TOTEM_OF_UNDYING))
+                    return true;
             }
-            for (int i : slots) {
-                ItemStack itemStack = serverPlayer.getInventory().getStack(i);
-                //如果有灵魂绑定,则清除并添加进列表里
-                if (EnchantmentHelper.getLevel(SOUL_BOUND, itemStack) > 0) {
-                    soulBoundItems.add(itemStack);
-                    serverPlayer.getInventory().removeStack(i);
+            //检测灵魂绑定
+            if (entity instanceof ServerPlayerEntity serverPlayer) {
+                //记录位置
+                ArrayList<Integer> slots = new ArrayList<>();
+                //灵魂绑定的物品
+                ArrayList<ItemStack> soulBoundItems = new ArrayList<>();
+                //先获取所有掉落物
+                for (int i = 0; i < 200; i++) {
+                    if (serverPlayer.getInventory().getStack(i).getItem() != Items.AIR) {
+                        //记录物品位置
+                        slots.add(i);
+                    }
                 }
+                for (int i : slots) {
+                    ItemStack itemStack = serverPlayer.getInventory().getStack(i);
+                    //如果有灵魂绑定,则清除并添加进列表里
+                    if (EnchantmentHelper.getLevel(SOUL_BOUND, itemStack) > 0) {
+                        soulBoundItems.add(itemStack);
+                        serverPlayer.getInventory().removeStack(i);
+                    }
+                }
+                SoulBoundItems.put(serverPlayer.getName().getString(), soulBoundItems);
             }
-            SoulBoundItems.put(serverPlayer.getName().getString(), soulBoundItems);
-
         }
         return true;
     }
+
+
+
 }

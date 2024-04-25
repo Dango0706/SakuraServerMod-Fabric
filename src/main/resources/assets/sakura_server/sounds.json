@@ -1,0 +1,8 @@
+{
+  "dragon_roar": {
+    "sounds": [
+      "sakura_server:dragon_roar_1",
+      "sakura_server:dragon_roar_2"
+    ]
+  }
+}

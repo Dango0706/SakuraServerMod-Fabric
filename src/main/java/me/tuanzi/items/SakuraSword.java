@@ -1,28 +1,43 @@
 package me.tuanzi.items;
 
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class SakuraItem extends Item {
+public class SakuraSword extends SwordItem {
+
     private int Rarity = 0;
     private ArrayList<Text> Desc = new ArrayList<>();
 
-    public SakuraItem(Settings settings) {
-        super(settings);
+
+    public SakuraSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
+        super(toolMaterial, attackDamage, attackSpeed - 4.0f, settings);
+    }
+
+    public SakuraSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings, int rarity, Text... desc) {
+        super(toolMaterial, attackDamage, attackSpeed - 4.0f, settings);
+        Rarity = rarity;
+        Desc.addAll(Arrays.stream(desc).toList());
+    }
+
+    public SakuraSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings, int rarity) {
+        super(toolMaterial, attackDamage, attackSpeed - 4.0f, settings);
+        Rarity = rarity;
     }
 
     public int getRarity() {
         return Rarity;
     }
 
-    public SakuraItem setRarity(int rarity) {
+    public SakuraSword setRarity(int rarity) {
         Rarity = rarity;
         return this;
     }
@@ -31,13 +46,10 @@ public class SakuraItem extends Item {
         return Desc;
     }
 
-    public SakuraItem setDesc(ArrayList<Text> desc) {
+    public SakuraSword setDesc(ArrayList<Text> desc) {
         Desc = desc;
         return this;
     }
-
-
-
 
     public int getColor() {
         if (this.Rarity == 0) {
@@ -57,15 +69,6 @@ public class SakuraItem extends Item {
         }
     }
 
-    /**
-     * Called by the client to append tooltips to an item. Subclasses can override
-     * this and add custom tooltips to {@code tooltip} list.
-     *
-     * @param stack
-     * @param world
-     * @param tooltip the list of tooltips to show
-     * @param context
-     */
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (getDesc().size() != 0)
@@ -77,4 +80,6 @@ public class SakuraItem extends Item {
     public Text getName(ItemStack itemStack) {
         return Text.empty().append(super.getName()).withColor(getColor());
     }
+
+
 }

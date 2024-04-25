@@ -28,11 +28,11 @@ public class LiftEvent implements PlayerJumpEvent, PlayerTickEvent {
                 for (int i = 2; i < 100; i++) {
                     if (world.getBlockState(new BlockPos(x, y + i, z)).getBlock() == LIFT) {
                         serverPlayer.teleport(world, serverPlayer.getX(), y + 1 + i, serverPlayer.getZ(), serverPlayer.getYaw(), serverPlayer.getPitch());
-                        player.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
-                        world.playSound(player, x, y + 1 + i, z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
+//                        player.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
+                        world.playSound(null, x, y + 1 + i, z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
                         serverPlayer.addStatusEffect(new StatusEffectInstance(LIFT_CD, 20, 0));
-                        player.increaseStat(LIFT_ALL,1);
-                        player.increaseStat(LIFT_UP,1);
+                        player.increaseStat(LIFT_ALL, 1);
+                        player.increaseStat(LIFT_UP, 1);
                         return ActionResult.PASS;
                     }
                 }
@@ -55,11 +55,11 @@ public class LiftEvent implements PlayerJumpEvent, PlayerTickEvent {
                 for (int i = 2; i < 100; i++) {
                     if (world.getBlockState(new BlockPos(x, y - i, z)).getBlock() == LIFT) {
                         serverPlayer.teleport(world, serverPlayer.getX(), y + 1 - i, serverPlayer.getZ(), serverPlayer.getYaw(), serverPlayer.getPitch());
-                        player.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
-                        world.playSound(player, x, y + 1 - i, z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
+//                        player.playSound(SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
+                        world.playSound(null, x, y + 1 - i, z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 1, 1);
                         serverPlayer.addStatusEffect(new StatusEffectInstance(LIFT_CD, 20, 0));
-                        player.increaseStat(LIFT_ALL,1);
-                        player.increaseStat(LIFT_DOWN,1);
+                        player.increaseStat(LIFT_ALL, 1);
+                        player.increaseStat(LIFT_DOWN, 1);
                         return;
                     }
                 }
