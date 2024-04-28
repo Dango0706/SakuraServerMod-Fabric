@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import static me.tuanzi.SakuraServer.EMERALD_APPLE;
+import static me.tuanzi.SakuraServer.MOVE_VILLAGER;
 
 @Mixin(VillagerEntity.class)
 public abstract class VillagerEntityMixin extends MerchantEntity
@@ -33,6 +34,12 @@ public abstract class VillagerEntityMixin extends MerchantEntity
             cir.setReturnValue(ActionResult.success(this.getWorld().isClient));
             cir.cancel();
         }
+       if(itemStack.isOf(MOVE_VILLAGER)){
+           itemStack.useOnEntity(player,this, hand);
+           cir.setReturnValue(ActionResult.success(this.getWorld().isClient));
+           cir.cancel();
+       }
+
 
     }
 

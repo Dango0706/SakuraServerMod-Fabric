@@ -7,6 +7,7 @@ import me.tuanzi.effects.LiftCDEffect;
 import me.tuanzi.enchantments.SoulBound;
 import me.tuanzi.enchantments.VeinMine;
 import me.tuanzi.items.foods.EmeraldApple;
+import me.tuanzi.items.functional.MoveVillager;
 import me.tuanzi.items.functional.SoulGem;
 import me.tuanzi.items.swords.DragonSword;
 import me.tuanzi.items.swords.SakuraToolMaterial;
@@ -57,6 +58,7 @@ public class SakuraServer implements ModInitializer {
     public static final Item EMERALD_APPLE = new EmeraldApple();
     public static final Item TEST_RES = new Item(new FabricItemSettings());
     public static final Item SOUL_GEM = new SoulGem(new FabricItemSettings().maxCount(64)).setRarity(5);
+    public static final Item MOVE_VILLAGER = new MoveVillager(new FabricItemSettings().maxCount(1)).setRarity(3);
     //sword
     public static final SwordItem DRAGON_SWORD = new DragonSword();
     public static final SwordItem STARDUST_WAND = new StardustWand();
@@ -90,6 +92,7 @@ public class SakuraServer implements ModInitializer {
                 entries.add(new ItemStack(SOUL_GEM));
                 entries.add(new ItemStack(DRAGON_SWORD));
                 entries.add(new ItemStack(STARDUST_WAND));
+                entries.add(new ItemStack(MOVE_VILLAGER));
                 entries.add(new ItemStack(TEST_RES));
             })
             .build();
@@ -111,13 +114,13 @@ public class SakuraServer implements ModInitializer {
         //reg
         //test
         Registry.register(Registries.ITEM, new Identifier(MODID, "test"), TEST_RES);
-
         //block
         Registry.register(Registries.BLOCK, new Identifier(MODID, "lift"), LIFT);
         //item
         Registry.register(Registries.ITEM, new Identifier(MODID, "lift"), new BlockItem(LIFT, new FabricItemSettings()));
         Registry.register(Registries.ITEM, new Identifier(MODID, "emerald_apple"), EMERALD_APPLE);
         Registry.register(Registries.ITEM, new Identifier(MODID, "soul_gem"), SOUL_GEM);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "villager_mover"), MOVE_VILLAGER);
         Registry.register(Registries.ITEM, new Identifier(MODID, "dragon_sword"), DRAGON_SWORD);
         Registry.register(Registries.ITEM, new Identifier(MODID, "stardust_wand"), STARDUST_WAND);
         //enchantment

@@ -24,6 +24,7 @@ public class ChineseLangGen extends FabricLanguageProvider {
         //item
         translationBuilder.add(EMERALD_APPLE, "绿宝石苹果");
         translationBuilder.add(SOUL_GEM, "灵魂宝石");
+        translationBuilder.add(MOVE_VILLAGER, "村民移动者");
         translationBuilder.add(DRAGON_SWORD, "龙剑");
         translationBuilder.add(STARDUST_WAND, "星光魔杖");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "您不是他的主人,无法绑定!");
@@ -35,6 +36,9 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.soul_gem.found", "你的狗狗在x:%d,y:%d,z:%d,他正在闪闪发光~");
         translationBuilder.add("item.sakura_server.soul_gem.uuid", "已绑定生物,UUID:");
         translationBuilder.add("item.sakura_server.soul_gem.dead", "你绑定的生物死亡了!!他的灵魂石闪闪发光...");
+        translationBuilder.add("item.sakura_server.villager_mover.fail.has_villager", "这个移动器已经有一个村民了!");
+        translationBuilder.add("item.sakura_server.villager_mover.saved","成功保存村民!");
+        translationBuilder.add("item.sakura_server.villager_mover.profession", "村民职业:");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc1", "技能:龙吼");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc2", "右键使用,CD:15s,持续时间:10s");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc3", "消耗当前生命值的30%,获得龙吼.");

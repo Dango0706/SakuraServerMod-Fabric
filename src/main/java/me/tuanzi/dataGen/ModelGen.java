@@ -24,6 +24,7 @@ public class ModelGen extends FabricModelProvider {
 //        itemModelGenerator.register(LIFT_ITEM, Models.CUBE_ALL);
         itemModelGenerator.register(EMERALD_APPLE, Models.GENERATED);
         itemModelGenerator.register(SOUL_GEM, Models.GENERATED);
+        itemModelGenerator.register(MOVE_VILLAGER, Models.GENERATED);
         itemModelGenerator.register(DRAGON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(STARDUST_WAND, Models.HANDHELD);
         itemModelGenerator.register(TEST_RES, Models.HANDHELD);

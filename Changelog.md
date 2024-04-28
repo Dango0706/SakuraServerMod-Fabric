@@ -1,3 +1,17 @@
+## 1.20.4.3 beta2:
+
+### 新增:
+
+新增物品:村民移动器(短暂存在).  
+
+#### 村民移动器:
+![](src/main/resources/assets/sakura_server/textures/item/villager_mover.png)
+
+顾名思义,移动村民用的.  
+手持此物品对村民右键即可.  
+使用一个绿宝石合成.  
+
+
 ## 1.20.4.3 beta1:
 
 ### 新增:

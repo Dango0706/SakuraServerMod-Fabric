@@ -69,6 +69,12 @@ public class RecipeGen extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.TORCH),
                         FabricRecipeProvider.conditionsFromItem(Items.LIGHT)).criterion(FabricRecipeProvider.hasItem(Items.TORCH),
                         FabricRecipeProvider.conditionsFromItem(Items.TORCH)).offerTo(exporter);
+        //光源方块
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MOVE_VILLAGER)
+                .input(Items.EMERALD)
+                .criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
+                        FabricRecipeProvider.conditionsFromItem(MOVE_VILLAGER)).criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
+                        FabricRecipeProvider.conditionsFromItem(Items.EMERALD)).offerTo(exporter);
 
     }
 
