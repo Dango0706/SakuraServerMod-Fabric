@@ -14,6 +14,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
+import static me.tuanzi.SakuraServer.ANGEL_BLOCK;
+
 public class BlockBreak implements AttackBlockCallback {
 
 
@@ -27,6 +29,9 @@ public class BlockBreak implements AttackBlockCallback {
                 serverWorld.breakBlock(pos, true);
                 ItemEntity item = new ItemEntity(serverWorld, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.LIGHT));
                 serverWorld.spawnEntity(item);
+            }
+            if(blockState.getBlock() == ANGEL_BLOCK && player.hasPermissionLevel(2)){
+                serverWorld.breakBlock(pos, true);
             }
         }
 
