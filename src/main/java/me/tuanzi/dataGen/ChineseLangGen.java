@@ -17,14 +17,21 @@ public class ChineseLangGen extends FabricLanguageProvider {
      *
      * @param translationBuilder
      */
+
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
         //block
         translationBuilder.add(LIFT, "电梯");
+        translationBuilder.add(ANGEL_BLOCK, "天使方块");
+        translationBuilder.add("block.sakura_server.angel_block.on", "现在启动范围内飞行!");
+        translationBuilder.add("block.sakura_server.angel_block.off", "现在关闭范围内飞行!");
+        translationBuilder.add("block.sakura_server.angel_block.range", "飞行范围设置为:%d");
         //item
         translationBuilder.add(EMERALD_APPLE, "绿宝石苹果");
         translationBuilder.add(SOUL_GEM, "灵魂宝石");
         translationBuilder.add(MOVE_VILLAGER, "村民移动者");
+        translationBuilder.add(MAGNET, "磁铁");
+        translationBuilder.add(ANGEL_WINGS_CORE, "天使之翼核心");
         translationBuilder.add(DRAGON_SWORD, "龙剑");
         translationBuilder.add(STARDUST_WAND, "星光魔杖");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "您不是他的主人,无法绑定!");
@@ -50,6 +57,7 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc3", "给予半径5格的生物10s断愈效果,且造成8点伤害");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc4", "给自己的宠物恢复8点生命值!");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc5", "蹲下则对其他玩家以及其他玩家的宠物也生效!");
+        translationBuilder.add("item.sakura_server.magnet.desc", "右键控制开关,潜行右键开关粒子显示");
         //enchantment
         translationBuilder.add(SOUL_BOUND, "§6灵魂绑定");
         translationBuilder.add(VEIN_MINE, "§a连锁挖矿");
@@ -58,6 +66,8 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add(LIFT_CD, "电梯使用冷却");
         translationBuilder.add(DRAGON_SWORD_EFFECT, "龙怒");
         translationBuilder.add(HEALBANE, "断愈");
+        translationBuilder.add(ANGEl_WINGS, "天使之翼");
+        translationBuilder.add("effect.sakura_server.angle_wings_warning", "§c警告:§r您的飞行时间所剩无几!!还有:§4%d秒!!!");
         //itemGroup
         translationBuilder.add("itemGroup.sakura_server.item_group", "樱花服务器");
         //command

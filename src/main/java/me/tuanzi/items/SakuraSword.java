@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static me.tuanzi.items.ItemUtils.getColor;
+
 public class SakuraSword extends SwordItem {
 
     private int Rarity = 0;
@@ -51,23 +53,6 @@ public class SakuraSword extends SwordItem {
         return this;
     }
 
-    public int getColor() {
-        if (this.Rarity == 0) {
-            return 0xAAAAAA;
-        } else if (this.Rarity == 1) {
-            return 0x55FF55;
-        } else if (this.Rarity == 2) {
-            return 0x55FFFF;
-        } else if (this.Rarity == 3) {
-            return 0x5555FF;
-        } else if (this.Rarity == 4) {
-            return 0xFFFF55;
-        } else if (this.Rarity == 5) {
-            return 0xFFAA00;
-        } else {
-            return 0xAAAAAA;
-        }
-    }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
@@ -78,7 +63,7 @@ public class SakuraSword extends SwordItem {
 
     @Override
     public Text getName(ItemStack itemStack) {
-        return Text.empty().append(super.getName()).withColor(getColor());
+        return Text.empty().append(super.getName()).withColor(getColor(getRarity()));
     }
 
 

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:iron_block"
+    },
+    "c": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "acb",
+    "a  ",
+    "acb"
+  ],
+  "result": {
+    "item": "sakura_server:magnet"
+  }
+}

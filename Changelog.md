@@ -1,16 +1,56 @@
+## 1.20.4.3 beta3:
+
+### 新增:
+
+与GeyserAPI进行联动,识别手机玩家,并给予手机玩家更方便的操作/优势.  
+新增效果:天使之翼.  
+新增方块:天使方块.  
+新增物品:磁铁,天使之翼核心.  
+
+#### 天使方块:
+
+![](src/main/resources/assets/sakura_server/textures/block/angel_block.png)
+
+功能性方块,在附近的玩家可以获得天使之翼的效果.  
+所有生物可以穿过这个方块.  
+暂无获取方式,暂无破坏方法(是op即可一下破坏,无论生存创造),防炸.
+
+#### 天使之翼:
+
+![](src/main/resources/assets/sakura_server/textures/mob_effect/angel_wings.png)
+
+获得飞行功能,可以像创造模式一样飞行.
+
+#### 磁铁:
+
+![](src/main/resources/assets/sakura_server/textures/item/magnet.png)
+
+耐久度:350                                          
+使用两个铁块,两个红石块与3个铁锭合成.  
+右键可以开启与关闭,开启后将吸取附近10格范围内可拾取的物品.  
+潜行加右键可以开启或关闭被吸取物品的粒子效果.   
+
+#### 天使之翼核心:
+
+![](src/main/resources/assets/sakura_server/textures/item/angel_wings_core.png)
+
+合成材料.  
+暂无用处.  
+![img.png](img.png)
+
 ## 1.20.4.3 beta2:
 
 ### 新增:
 
-新增物品:村民移动器(短暂存在).  
+新增物品:村民移动器(短暂存在).
 
 #### 村民移动器:
+
 ![](src/main/resources/assets/sakura_server/textures/item/villager_mover.png)
 
 顾名思义,移动村民用的.  
 手持此物品对村民右键即可.  
-使用一个绿宝石合成.  
-
+使用一个绿宝石合成.
 
 ## 1.20.4.3 beta1:
 
@@ -22,6 +62,7 @@
 新增武器:龙剑,星光魔杖.
 
 #### 灵魂石:
+
 ![](src/main/resources/assets/sakura_server/textures/item/soul_gem.png)  
 (测试物品.)  
 由4个钻石,4个绿宝石与一个下界之星合成.  
@@ -31,16 +72,17 @@
 使用之后,会有120s的cd,无法再次使用此灵魂石复活.  
 若该生物未死亡,则在半径40格内搜寻此生物,并使其发光.  
 暂时只支持**狼**.  
-todo:支持更多生物,生物死亡时灵魂石无需在身上.  
+todo:支持更多生物,生物死亡时灵魂石无需在身上.
 
 #### 合成表:
 
 使用一个火把即可合成一个光源方块.  
 移除了光源方块要求创造且是op才能切换的规定.  
 即你可以在生存模式下修改光源方块亮度,且与创造模式一样拥有提示.  
-手持光源方块即可破坏,破坏固定掉落15亮度的光源方块.  
+手持光源方块即可破坏,破坏固定掉落15亮度的光源方块.
 
 #### 龙剑:
+
 ![](src/main/resources/assets/sakura_server/textures/item/dragon_sword.png)  
 传奇武器.  
 攻击伤害:8,攻击速度:1.6.  
@@ -48,25 +90,27 @@ todo:支持更多生物,生物死亡时灵魂石无需在身上.
 持续10s,CD:16s,切换武器后失效.
 
 #### 星光魔杖:
+
 ![](src/main/resources/assets/sakura_server/textures/item/stardust_wand.png)  
 传奇武器.  
 右键使用星辉之力:  
 Cd:30s,持续时间:10S,给予附近的生物10s断愈效果,且造成8点伤害.  
 给自己的宠物恢复8点生命值!  
-蹲下则对玩家也生效!  
+蹲下则对玩家也生效!
 
 #### 龙吼:
+
 ![](src/main/resources/assets/sakura_server/textures/mob_effect/dragon_sword_effect.png)  
 状态效果.  
 增加4额外攻击力,增加50%攻速与30%移动速度.  
 缓慢回复生命值.统共回复生命值上限20%.(每5ticks恢复一次,即每次恢复0.5%生命值上限生命.)  
-仅能通过龙剑获得.  
+仅能通过龙剑获得.
 
 #### 断愈:
+
 ![](src/main/resources/assets/sakura_server/textures/mob_effect/healbane.png)  
 状态效果.  
 禁止治疗,在效果结束时恢复所有在效果**持续期间**恢复的血量.
-
 
 ### 修复:
 
@@ -75,8 +119,8 @@ Cd:30s,持续时间:10S,给予附近的生物10s断愈效果,且造成8点伤害
 灵魂绑定失效的bug.
 
 ### todo:
-灵魂石无需在身上也可以触发.
 
+灵魂石无需在身上也可以触发.
 
 ## 1.20.4.2:
 

@@ -1,6 +1,7 @@
 package me.tuanzi.items;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -8,7 +9,10 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static me.tuanzi.items.ItemUtils.getColor;
 
 public class SakuraItem extends Item {
     private int Rarity = 0;
@@ -36,26 +40,13 @@ public class SakuraItem extends Item {
         return this;
     }
 
-
-
-
-    public int getColor() {
-        if (this.Rarity == 0) {
-            return 0xAAAAAA;
-        } else if (this.Rarity == 1) {
-            return 0x55FF55;
-        } else if (this.Rarity == 2) {
-            return 0x55FFFF;
-        } else if (this.Rarity == 3) {
-            return 0x5555FF;
-        } else if (this.Rarity == 4) {
-            return 0xFFFF55;
-        } else if (this.Rarity == 5) {
-            return 0xFFAA00;
-        } else {
-            return 0xAAAAAA;
-        }
+    public SakuraItem setDesc(Text... desc) {
+        Desc.addAll(Arrays.stream(desc).toList());
+        return this;
     }
+
+
+
 
     /**
      * Called by the client to append tooltips to an item. Subclasses can override
@@ -75,6 +66,13 @@ public class SakuraItem extends Item {
 
     @Override
     public Text getName(ItemStack itemStack) {
-        return Text.empty().append(super.getName()).withColor(getColor());
+        return Text.empty().append(super.getName()).withColor(getColor(getRarity()));
     }
+
+
+    public void inInventoryTick(PlayerEntity player, World world, ItemStack itemStack) {
+
+    }
+
+
 }

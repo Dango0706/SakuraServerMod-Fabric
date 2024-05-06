@@ -26,6 +26,9 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
         getTagBuilder(BlockTags.PICKAXE_MINEABLE).add(
                 new Identifier(MODID, "lift")
         );
+        getTagBuilder(BlockTags.PICKAXE_MINEABLE).add(
+                new Identifier(MODID, "angel_block")
+        );
 
     }
 

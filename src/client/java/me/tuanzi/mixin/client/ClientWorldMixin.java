@@ -25,8 +25,8 @@ import java.util.function.Supplier;
 @Mixin(ClientWorld.class)
 public abstract class ClientWorldMixin extends World {
 
-    @Final
     @Shadow
+    @Final
     private final MinecraftClient client = MinecraftClient.getInstance();
 
     public ClientWorldMixin(MutableWorldProperties properties, RegistryKey<World> registryRef, DynamicRegistryManager registryManager, RegistryEntry<DimensionType> dimensionEntry, Supplier<Profiler> profiler, boolean isClient, boolean debugWorld, long biomeAccess, int maxChainedNeighborUpdates) {

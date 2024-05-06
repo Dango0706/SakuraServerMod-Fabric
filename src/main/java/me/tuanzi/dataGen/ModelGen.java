@@ -17,6 +17,7 @@ public class ModelGen extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(LIFT);
+        blockStateModelGenerator.registerSimpleCubeAll(ANGEL_BLOCK);
     }
 
     @Override
@@ -25,6 +26,8 @@ public class ModelGen extends FabricModelProvider {
         itemModelGenerator.register(EMERALD_APPLE, Models.GENERATED);
         itemModelGenerator.register(SOUL_GEM, Models.GENERATED);
         itemModelGenerator.register(MOVE_VILLAGER, Models.GENERATED);
+        itemModelGenerator.register(MAGNET, Models.GENERATED);
+        itemModelGenerator.register(ANGEL_WINGS_CORE, Models.GENERATED);
         itemModelGenerator.register(DRAGON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(STARDUST_WAND, Models.HANDHELD);
         itemModelGenerator.register(TEST_RES, Models.HANDHELD);

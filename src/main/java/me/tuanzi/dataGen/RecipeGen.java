@@ -63,6 +63,39 @@ public class RecipeGen extends FabricRecipeProvider {
                 .criterion(FabricRecipeProvider.hasItem(Items.NETHER_STAR),
                         FabricRecipeProvider.conditionsFromItem(Items.NETHER_STAR))
                 .offerTo(exporter);
+        //磁铁
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, MAGNET)
+                .pattern("acb")
+                .pattern("a  ")
+                .pattern("acb")
+                .input('a', Items.IRON_INGOT)
+                .input('b', Items.IRON_BLOCK)
+                .input('c', Items.REDSTONE_BLOCK)
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_BLOCK),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_BLOCK))
+                .criterion(FabricRecipeProvider.hasItem(Items.REDSTONE_BLOCK),
+                        FabricRecipeProvider.conditionsFromItem(Items.REDSTONE_BLOCK))
+                .offerTo(exporter);
+        //天使之翼核心
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ANGEL_WINGS_CORE)
+                .pattern("aba")
+                .pattern("cdc")
+                .pattern("aba")
+                .input('a', Items.DRAGON_BREATH)
+                .input('b', Items.END_CRYSTAL)
+                .input('c', Items.ELYTRA)
+                .input('d', Items.NETHER_STAR)
+                .criterion(FabricRecipeProvider.hasItem(Items.DRAGON_BREATH),
+                        FabricRecipeProvider.conditionsFromItem(Items.DRAGON_BREATH))
+                .criterion(FabricRecipeProvider.hasItem(Items.END_CRYSTAL),
+                        FabricRecipeProvider.conditionsFromItem(Items.END_CRYSTAL))
+                .criterion(FabricRecipeProvider.hasItem(Items.ELYTRA),
+                        FabricRecipeProvider.conditionsFromItem(Items.ELYTRA))
+                .criterion(FabricRecipeProvider.hasItem(Items.NETHER_STAR),
+                        FabricRecipeProvider.conditionsFromItem(Items.NETHER_STAR))
+                .offerTo(exporter);
         //光源方块
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, Items.LIGHT)
                 .input(Items.TORCH)

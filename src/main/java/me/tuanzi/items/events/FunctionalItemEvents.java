@@ -1,5 +1,7 @@
 package me.tuanzi.items.events;
 
+import me.tuanzi.events.PlayerTickEvent;
+import me.tuanzi.items.SakuraItem;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.minecraft.entity.EntityType;
@@ -31,7 +33,7 @@ import java.util.UUID;
 import static me.tuanzi.SakuraServer.SOUL_GEM;
 import static me.tuanzi.SakuraServer.printLog;
 
-public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath {
+public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath, PlayerTickEvent {
 
     @Override
     public TypedActionResult<ItemStack> interact(PlayerEntity player, World world, Hand hand) {
@@ -133,5 +135,28 @@ public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntity
                 }
             }
         }
+    }
+
+    @Override
+    public void tick(PlayerEntity player) {
+        for (int i = 0; i < 36; i++) {
+            if (player.getInventory().getStack(i).getItem() instanceof SakuraItem item) {
+                item.inInventoryTick(player, player.getWorld(), player.getInventory().getStack(i));
+                return;
+            }
+        }
+        if (player.getOffHandStack().getItem() instanceof SakuraItem item) {
+            item.inInventoryTick(player, player.getWorld(), player.getOffHandStack());
+            return;
+        }
+
+        for (int i = 100; i < 104; i++) {
+            if (player.getInventory().getStack(i).getItem() instanceof SakuraItem item) {
+                item.inInventoryTick(player, player.getWorld(), player.getInventory().getStack(i));
+                return;
+            }
+        }
+
+
     }
 }

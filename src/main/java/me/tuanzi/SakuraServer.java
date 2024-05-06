@@ -1,12 +1,19 @@
 package me.tuanzi;
 
+import me.tuanzi.bedrock.GeyserExtension;
+import me.tuanzi.blocks.angel_block.AngelBlock;
+import me.tuanzi.blocks.angel_block.AngelBlockEntity;
 import me.tuanzi.blocks.lift.Lift;
+import me.tuanzi.effects.AngelWings;
 import me.tuanzi.effects.DragonSwordEffect;
 import me.tuanzi.effects.Healbane;
 import me.tuanzi.effects.LiftCDEffect;
 import me.tuanzi.enchantments.SoulBound;
 import me.tuanzi.enchantments.VeinMine;
+import me.tuanzi.items.SakuraBlockItem;
+import me.tuanzi.items.SakuraItem;
 import me.tuanzi.items.foods.EmeraldApple;
+import me.tuanzi.items.functional.Magnet;
 import me.tuanzi.items.functional.MoveVillager;
 import me.tuanzi.items.functional.SoulGem;
 import me.tuanzi.items.swords.DragonSword;
@@ -15,11 +22,14 @@ import me.tuanzi.items.swords.StardustWand;
 import me.tuanzi.utils.CommandRegister;
 import me.tuanzi.utils.EventRegister;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.Block;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
@@ -34,6 +44,7 @@ import net.minecraft.stat.StatFormatter;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.geysermc.geyser.api.GeyserApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,6 +57,9 @@ public class SakuraServer implements ModInitializer {
     // It is considered best practice to use your mod id as the logger's name.
     // That way, it's clear which mod wrote info, warnings, and errors.
 
+    public static boolean hasGeyser = FabricLoader.getInstance().isModLoaded("geyser-fabric");
+    public static boolean hasFloodgate = FabricLoader.getInstance().isModLoaded("floodgate");
+
     public static final String MODID = "sakura_server";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
     //toolMaterial
@@ -54,11 +68,15 @@ public class SakuraServer implements ModInitializer {
     public static final SakuraToolMaterial LEG_TOOLS = new SakuraToolMaterial(5);
     //block
     public static final Block LIFT = new Lift(FabricBlockSettings.create().strength(4.0f).requiresTool());
+    public static final Block ANGEL_BLOCK = new AngelBlock(FabricBlockSettings.create().strength(-1,20000000).requiresTool());
+    public static  BlockEntityType<AngelBlockEntity> ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
     //item
     public static final Item EMERALD_APPLE = new EmeraldApple();
     public static final Item TEST_RES = new Item(new FabricItemSettings());
     public static final Item SOUL_GEM = new SoulGem(new FabricItemSettings().maxCount(64)).setRarity(5);
     public static final Item MOVE_VILLAGER = new MoveVillager(new FabricItemSettings().maxCount(1)).setRarity(3);
+    public static final Item MAGNET = new Magnet(new FabricItemSettings().maxCount(1).maxDamage(350)).setRarity(3).setDesc(Text.translatable("item.sakura_server.magnet.desc"));
+    public static final Item ANGEL_WINGS_CORE = new SakuraItem(new FabricItemSettings()).setRarity(4);
     //sword
     public static final SwordItem DRAGON_SWORD = new DragonSword();
     public static final SwordItem STARDUST_WAND = new StardustWand();
@@ -71,6 +89,7 @@ public class SakuraServer implements ModInitializer {
             .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "F7589552-C50D-3067-C438-1EFEDBD53D8B", 0.5f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL)
             .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "F7589552-C50D-3067-C438-1EFEDBD53D8B", 0.3f, EntityAttributeModifier.Operation.MULTIPLY_TOTAL);
     public static final StatusEffect HEALBANE = new Healbane();
+    public static final StatusEffect ANGEl_WINGS = new AngelWings();
     //stats
     public static final Identifier HIGHEST_DAMAGE = new Identifier(MODID, "highest_damage");
     public static final Identifier HIGHEST_HURT = new Identifier(MODID, "highest_hurt");
@@ -82,17 +101,22 @@ public class SakuraServer implements ModInitializer {
     //sounds
     public static final Identifier DRAGON_ROAR = new Identifier(MODID, "dragon_roar");
     public static SoundEvent DRAGON_ROAR_SOUND = SoundEvent.of(DRAGON_ROAR);
+    public static final Identifier MAGNET_USE = new Identifier(MODID, "magnet");
+    public static SoundEvent MAGNET_USE_SOUND = SoundEvent.of(MAGNET_USE);
     //itemGroup
     private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(LIFT))
             .displayName(Text.translatable("itemGroup.sakura_server.item_group"))
             .entries((context, entries) -> {
                 entries.add(new ItemStack(LIFT));
+                entries.add(new ItemStack(ANGEL_BLOCK));
                 entries.add(new ItemStack(EMERALD_APPLE));
                 entries.add(new ItemStack(SOUL_GEM));
                 entries.add(new ItemStack(DRAGON_SWORD));
                 entries.add(new ItemStack(STARDUST_WAND));
                 entries.add(new ItemStack(MOVE_VILLAGER));
+                entries.add(new ItemStack(MAGNET));
+                entries.add(new ItemStack(ANGEL_WINGS_CORE));
                 entries.add(new ItemStack(TEST_RES));
             })
             .build();
@@ -110,19 +134,27 @@ public class SakuraServer implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
         //reg
         //test
         Registry.register(Registries.ITEM, new Identifier(MODID, "test"), TEST_RES);
         //block
         Registry.register(Registries.BLOCK, new Identifier(MODID, "lift"), LIFT);
+        Registry.register(Registries.BLOCK, new Identifier(MODID, "angel_block"), ANGEL_BLOCK);
+        ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = Registry.register(
+                Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(MODID, "angel_block_entity"),
+                FabricBlockEntityTypeBuilder.create(AngelBlockEntity::new, ANGEL_BLOCK).build()
+        );
         //item
-        Registry.register(Registries.ITEM, new Identifier(MODID, "lift"), new BlockItem(LIFT, new FabricItemSettings()));
+        Registry.register(Registries.ITEM, new Identifier(MODID, "lift"), new SakuraBlockItem(LIFT, new FabricItemSettings(),3));
+        Registry.register(Registries.ITEM, new Identifier(MODID, "angel_block"), new SakuraBlockItem(ANGEL_BLOCK, new FabricItemSettings(),5));
         Registry.register(Registries.ITEM, new Identifier(MODID, "emerald_apple"), EMERALD_APPLE);
         Registry.register(Registries.ITEM, new Identifier(MODID, "soul_gem"), SOUL_GEM);
         Registry.register(Registries.ITEM, new Identifier(MODID, "villager_mover"), MOVE_VILLAGER);
         Registry.register(Registries.ITEM, new Identifier(MODID, "dragon_sword"), DRAGON_SWORD);
         Registry.register(Registries.ITEM, new Identifier(MODID, "stardust_wand"), STARDUST_WAND);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "magnet"), MAGNET);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "angel_wings_core"), ANGEL_WINGS_CORE);
         //enchantment
         Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "soul_bound"), SOUL_BOUND);
         Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "vein_mine"), VEIN_MINE);
@@ -132,6 +164,7 @@ public class SakuraServer implements ModInitializer {
         Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "lift_cd"), LIFT_CD);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "dragon_sword_effect"), DRAGON_SWORD_EFFECT);
         Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "healbane"), HEALBANE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier(MODID, "angel_wings"), ANGEl_WINGS);
         //statistics
         Registry.register(Registries.CUSTOM_STAT, "highest_damage", HIGHEST_DAMAGE);
         Stats.CUSTOM.getOrCreateStat(HIGHEST_DAMAGE, StatFormatter.DIVIDE_BY_TEN);
@@ -149,13 +182,22 @@ public class SakuraServer implements ModInitializer {
         Stats.CUSTOM.getOrCreateStat(DRAW_COUNT, StatFormatter.DEFAULT);
         //sound
         Registry.register(Registries.SOUND_EVENT, DRAGON_ROAR, DRAGON_ROAR_SOUND);
+        Registry.register(Registries.SOUND_EVENT, MAGNET_USE, MAGNET_USE_SOUND);
         //event
         new EventRegister();
         //command
         new CommandRegister();
         //network
         registerC2SPackets();
+        //geyser
+        if(hasGeyser){
+            ServerLifecycleEvents.SERVER_STARTING.register((server -> {
+                GeyserApi.api().eventBus().register(new GeyserExtension(), this);
+            }));
+        }
         printLog("加载成功!");
+        printLog("是否加载Geyser:" + hasGeyser);
+        printLog("是否加载floodgate:" + hasFloodgate);
     }
 
 

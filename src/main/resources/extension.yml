@@ -1,0 +1,6 @@
+id: sakura_server
+name: Sakura
+main: me.tuanzi.bedrock.GeyserExtension
+api: 1.0.0
+version: 1.0.0
+authors: [tuanzi]

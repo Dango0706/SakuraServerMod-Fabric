@@ -22,9 +22,16 @@ public class EnglishLangGen extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder translationBuilder) {
         //block
         translationBuilder.add(LIFT, "Lift");
+        translationBuilder.add(ANGEL_BLOCK, "AngelBlock");
+        translationBuilder.add("block.sakura_server.angel_block.on", "Starting range flight now!");
+        translationBuilder.add("block.sakura_server.angel_block.off", "Now turn off ranged flights!");
+        translationBuilder.add("block.sakura_server.angel_block.range", "Flight range set to:%d");
         //item
         translationBuilder.add(EMERALD_APPLE,"Emerald Apple");
         translationBuilder.add(SOUL_GEM,"Soul Gem");
+        translationBuilder.add(MOVE_VILLAGER, "Villager Mover");
+        translationBuilder.add(MAGNET, "Magnet");
+        translationBuilder.add(ANGEL_WINGS_CORE, "Angel Wings Core");
         translationBuilder.add(DRAGON_SWORD,"Dragon Sword");
         translationBuilder.add(STARDUST_WAND, "Stardust Wand");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "You don't own him, you can't bind him!");
@@ -32,9 +39,13 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.soul_gem.fail.has_entity", "This SoulGem already has a binding!");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_found", "There are no creatures bound to you within 40 squares~");
         translationBuilder.add("item.sakura_server.soul_gem.respawn", "Resurrect! My love!!!");
+        translationBuilder.add("item.sakura_server.soul_gem.unbound", "解绑成功!");
         translationBuilder.add("item.sakura_server.soul_gem.found", "Your dog is in x:%d,y:%d,z:%d ♪ He's shining ♪");
         translationBuilder.add("item.sakura_server.soul_gem.uuid", "bound creature,UUID:");
         translationBuilder.add("item.sakura_server.soul_gem.dead", "The creature you bound is dead!!His SoulGem sparkles....");
+        translationBuilder.add("item.sakura_server.villager_mover.fail.has_villager", "This mover already has a villager!");
+        translationBuilder.add("item.sakura_server.villager_mover.saved","Successfully saved villagers!");
+        translationBuilder.add("item.sakura_server.villager_mover.profession", "Villager Occupation:");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc1", "Skill:Dragon Roar");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc2", "Right click to use,CD:15s,Duration:10s");
         translationBuilder.add("item.sakura_server.dragon_sword.skill.desc3", "Deplete 30% of your current life value to gain Dragon's Roar.");
@@ -46,6 +57,7 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc3", "Grants 10s of broken healing to creatures in a 5 square radius, and deals 8 points of damage.");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc4", "Restore 8 life points to your pet!");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc5", "Crouching then works on other players and other players' pets as well!");
+        translationBuilder.add("item.sakura_server.magnet.desc", "Right click control switch, sneak right click switch particle display");
         //enchantment
         translationBuilder.add(SOUL_BOUND, "§6SoulBound");
         translationBuilder.add(VEIN_MINE, "§aVeinMine");
@@ -54,6 +66,8 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add(LIFT_CD, "lift CD");
         translationBuilder.add(DRAGON_SWORD_EFFECT, "Dragon Rage");
         translationBuilder.add(HEALBANE, "Break healing");
+        translationBuilder.add(ANGEl_WINGS, "Wings of Angels");
+        translationBuilder.add("effect.sakura_server.angle_wings_warning", "§cWarning:§rYou have very little flight time left!!!!Also: §4%d seconds!!!");
         //itemGroup
         translationBuilder.add("itemGroup.sakura_server.item_group", "Sakura Server");
         //command

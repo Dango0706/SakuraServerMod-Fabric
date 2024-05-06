@@ -4,5 +4,12 @@
       "sakura_server:dragon_roar_1",
       "sakura_server:dragon_roar_2"
     ]
+  },
+  "magnet": {
+    "sounds": [
+      "sakura_server:magnet_1",
+      "sakura_server:magnet_2"
+    ]
   }
+
 }

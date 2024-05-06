@@ -1,6 +1,7 @@
 package me.tuanzi.utils;
 
 import me.tuanzi.Test;
+import me.tuanzi.bedrock.PlayerJoinEvent;
 import me.tuanzi.blocks.lift.LiftEvent;
 import me.tuanzi.effects.events.EffectsEvents;
 import me.tuanzi.enchantments.events.SoulBoundEvent;
@@ -14,6 +15,7 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class EventRegister {
@@ -21,6 +23,7 @@ public class EventRegister {
         //item
         UseItemCallback.EVENT.register(new FunctionalItemEvents());
         ServerLivingEntityEvents.AFTER_DEATH.register(new FunctionalItemEvents());
+        PlayerTickEvent.EVENT.register(new FunctionalItemEvents());
         //block
         PlayerJumpEvent.EVENT.register(new LiftEvent());
         PlayerTickEvent.EVENT.register(new LiftEvent());
@@ -31,14 +34,14 @@ public class EventRegister {
         //灵魂绑定
         ServerPlayerEvents.AFTER_RESPAWN.register(new SoulBoundEvent());
         ServerLivingEntityEvents.ALLOW_DEATH.register(new SoulBoundEvent());
-
         //连锁
         PlayerBlockBreakEvents.AFTER.register(new VeinMineEvent());
         //stats
         ServerLivingEntityEvents.ALLOW_DAMAGE.register(new DamageStats());
         //fix
         AttackBlockCallback.EVENT.register(new BlockBreak());
-
+        //geyser
+        ServerPlayConnectionEvents.JOIN.register(new PlayerJoinEvent());
         //test
         if(FabricLoader.getInstance().isDevelopmentEnvironment()){
             LivingEntityFinalDamage.EVENT.register(new Test());

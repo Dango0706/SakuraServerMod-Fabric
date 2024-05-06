@@ -30,6 +30,11 @@ repositories {
 		url "https://maven.terraformersmc.com"
 	}
 
+	//geyser
+	maven {
+		url = uri("https://repo.opencollab.dev/main/")
+	}
+
 }
 
 loom {
@@ -65,6 +70,10 @@ dependencies {
 
 	modImplementation("dev.isxander.yacl:yet-another-config-lib-fabric:3.3.2+1.20.4")    // YACL
 	modImplementation("com.terraformersmc:modmenu:9.0.0")    // ModMenu
+
+	compileOnly('org.geysermc.geyser:api:2.2.0-SNAPSHOT')// geyser
+	compileOnly('org.geysermc.floodgate:api:2.2.2-SNAPSHOT') //floodgate
+
 
 }
 

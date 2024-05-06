@@ -3,6 +3,7 @@ package me.tuanzi.dataGen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
+import static me.tuanzi.SakuraServer.ANGEL_BLOCK;
 import static me.tuanzi.SakuraServer.LIFT;
 
 public class BlockDropLootGen extends FabricBlockLootTableProvider {
@@ -20,5 +21,6 @@ public class BlockDropLootGen extends FabricBlockLootTableProvider {
     public void generate() {
         //电梯
         addDrop(LIFT,drops(LIFT));
+        addDrop(ANGEL_BLOCK,drops(ANGEL_BLOCK));
     }
 }

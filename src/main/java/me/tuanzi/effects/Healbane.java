@@ -9,7 +9,7 @@ public class Healbane extends StatusEffect {
 
 
     public Healbane() {
-        super(HARMFUL, 0x0000ff);
+        super(HARMFUL, 0xff0000);
     }
 
 
