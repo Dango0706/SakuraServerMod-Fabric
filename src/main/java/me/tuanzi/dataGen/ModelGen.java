@@ -38,7 +38,7 @@ public class ModelGen extends FabricModelProvider {
         itemModelGenerator.register(COMPRESSED_COPPER_7, Models.GENERATED);
         itemModelGenerator.register(COMPRESSED_COPPER_8, Models.GENERATED);
         itemModelGenerator.register(COMPRESSED_COPPER_9, Models.GENERATED);
-        itemModelGenerator.register(ANGEL_BLOCK_FRAMEWORK, Models.CUBE_ALL);
+        itemModelGenerator.register(ANGEL_BLOCK_FRAMEWORK, Models.GENERATED);
         itemModelGenerator.register(DRAGON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(STARDUST_WAND, Models.HANDHELD);
         itemModelGenerator.register(TEST_ITEM, Models.HANDHELD);

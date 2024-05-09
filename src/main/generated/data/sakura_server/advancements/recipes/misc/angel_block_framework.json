@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_compressed_copper_9": {
+    "has_compressed_copper_6": {
       "conditions": {
         "items": [
           {
             "items": [
-              "sakura_server:compressed_copper_9"
+              "sakura_server:compressed_copper_6"
             ]
           }
         ]
@@ -75,7 +75,7 @@
       "has_netherite_block",
       "has_respawn_anchor",
       "has_dragon_head",
-      "has_compressed_copper_9"
+      "has_compressed_copper_6"
     ]
   ],
   "rewards": {
