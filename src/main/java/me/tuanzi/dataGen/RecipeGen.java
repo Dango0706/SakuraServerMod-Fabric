@@ -131,7 +131,7 @@ public class RecipeGen extends FabricRecipeProvider {
                 .input('b', Items.NETHERITE_BLOCK)
                 .input('c', Items.RESPAWN_ANCHOR)
                 .input('d', Items.DRAGON_HEAD)
-                .input('e', COMPRESSED_COPPER_9)
+                .input('e', COMPRESSED_COPPER_6)
                 .criterion(FabricRecipeProvider.hasItem(Items.DIAMOND_BLOCK),
                         FabricRecipeProvider.conditionsFromItem(Items.DIAMOND_BLOCK))
                 .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_BLOCK),
@@ -140,8 +140,8 @@ public class RecipeGen extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.RESPAWN_ANCHOR))
                 .criterion(FabricRecipeProvider.hasItem(Items.DRAGON_HEAD),
                         FabricRecipeProvider.conditionsFromItem(Items.DRAGON_HEAD))
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_9),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_9))
+                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_6),
+                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_6))
                 .offerTo(exporter);
         //天使方块
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ANGEL_BLOCK)
@@ -168,11 +168,13 @@ public class RecipeGen extends FabricRecipeProvider {
                         FabricRecipeProvider.conditionsFromItem(Items.TORCH))
                 .offerTo(exporter);
         //村民移动者
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MOVE_VILLAGER)
+        //1.20.4-beta4 暂时移除
+
+/*        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MOVE_VILLAGER)
                 .input(Items.EMERALD)
                 .criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
                         FabricRecipeProvider.conditionsFromItem(Items.EMERALD))
-                .offerTo(exporter);
+                .offerTo(exporter);*/
         //压缩铜锭
         decomposed(COMPRESSED_COPPER_1, Items.COPPER_INGOT, 4, exporter);
         decomposed(COMPRESSED_COPPER_2, COMPRESSED_COPPER_1, 4, exporter);

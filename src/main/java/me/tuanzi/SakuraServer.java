@@ -85,7 +85,7 @@ public class SakuraServer implements ModInitializer {
     public static final Item COMPRESSED_COPPER_4 = new SakuraItem(new FabricItemSettings()).setRarity(3);
     public static final Item COMPRESSED_COPPER_5 = new SakuraItem(new FabricItemSettings()).setRarity(3);
     public static final Item COMPRESSED_COPPER_6 = new SakuraItem(new FabricItemSettings()).setRarity(3);
-    public static final Item COMPRESSED_COPPER_7 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_7 = new SakuraItem(new FabricItemSettings()).setRarity(4);
     public static final Item COMPRESSED_COPPER_8 = new SakuraItem(new FabricItemSettings()).setRarity(4);
     public static final Item COMPRESSED_COPPER_9 = new SakuraItem(new FabricItemSettings()).setRarity(4);
     public static final Item ANGEL_BLOCK_FRAMEWORK = new SakuraItem(new FabricItemSettings()).setRarity(4);
