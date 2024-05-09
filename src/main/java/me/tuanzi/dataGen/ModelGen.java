@@ -28,9 +28,20 @@ public class ModelGen extends FabricModelProvider {
         itemModelGenerator.register(MOVE_VILLAGER, Models.GENERATED);
         itemModelGenerator.register(MAGNET, Models.GENERATED);
         itemModelGenerator.register(ANGEL_WINGS_CORE, Models.GENERATED);
+        itemModelGenerator.register(SACRED_FEATHERS, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_1, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_2, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_3, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_4, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_5, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_6, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_7, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_8, Models.GENERATED);
+        itemModelGenerator.register(COMPRESSED_COPPER_9, Models.GENERATED);
+        itemModelGenerator.register(ANGEL_BLOCK_FRAMEWORK, Models.CUBE_ALL);
         itemModelGenerator.register(DRAGON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(STARDUST_WAND, Models.HANDHELD);
-        itemModelGenerator.register(TEST_RES, Models.HANDHELD);
+        itemModelGenerator.register(TEST_ITEM, Models.HANDHELD);
     }
 
 

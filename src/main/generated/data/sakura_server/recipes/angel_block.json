@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "sakura_server:angel_block_framework"
+    },
+    "b": {
+      "item": "sakura_server:sacred_feathers"
+    },
+    "c": {
+      "item": "sakura_server:angel_wings_core"
+    },
+    "d": {
+      "item": "minecraft:honeycomb"
+    }
+  },
+  "pattern": [
+    " a ",
+    "bcb",
+    "ddd"
+  ],
+  "result": {
+    "item": "sakura_server:angel_block"
+  }
+}

@@ -1,4 +1,4 @@
-package me.tuanzi.fix.events;
+package me.tuanzi.features.events;
 
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.block.BlockState;

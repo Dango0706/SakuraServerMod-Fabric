@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static me.tuanzi.SakuraServer.SOUL_GEM;
-import static me.tuanzi.SakuraServer.printLog;
+import static me.tuanzi.SakuraServer.printDebugLog;
 
 public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath, PlayerTickEvent {
 
@@ -126,7 +126,7 @@ public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntity
                                 if (wolf.hasCustomName())
                                     itemStack.getNbt().putString("displayName", wolf.getDisplayName().getString());
                                 player.sendMessage(Text.translatable("item.sakura_server.soul_gem.dead"));
-                                printLog(uuid.toString());
+                                printDebugLog(uuid.toString());
                                 itemStack.getNbt().putBoolean("entityDeath", true);
                                 player.getInventory().setStack(i, itemStack);
                             }
@@ -142,18 +142,15 @@ public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntity
         for (int i = 0; i < 36; i++) {
             if (player.getInventory().getStack(i).getItem() instanceof SakuraItem item) {
                 item.inInventoryTick(player, player.getWorld(), player.getInventory().getStack(i));
-                return;
             }
         }
         if (player.getOffHandStack().getItem() instanceof SakuraItem item) {
             item.inInventoryTick(player, player.getWorld(), player.getOffHandStack());
-            return;
         }
 
         for (int i = 100; i < 104; i++) {
             if (player.getInventory().getStack(i).getItem() instanceof SakuraItem item) {
                 item.inInventoryTick(player, player.getWorld(), player.getInventory().getStack(i));
-                return;
             }
         }
 

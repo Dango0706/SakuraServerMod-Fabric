@@ -12,6 +12,7 @@ import me.tuanzi.enchantments.SoulBound;
 import me.tuanzi.enchantments.VeinMine;
 import me.tuanzi.items.SakuraBlockItem;
 import me.tuanzi.items.SakuraItem;
+import me.tuanzi.items.TestItem;
 import me.tuanzi.items.foods.EmeraldApple;
 import me.tuanzi.items.functional.Magnet;
 import me.tuanzi.items.functional.MoveVillager;
@@ -72,11 +73,22 @@ public class SakuraServer implements ModInitializer {
     public static  BlockEntityType<AngelBlockEntity> ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
     //item
     public static final Item EMERALD_APPLE = new EmeraldApple();
-    public static final Item TEST_RES = new Item(new FabricItemSettings());
+    public static final Item TEST_ITEM = new TestItem(new FabricItemSettings());
     public static final Item SOUL_GEM = new SoulGem(new FabricItemSettings().maxCount(64)).setRarity(5);
     public static final Item MOVE_VILLAGER = new MoveVillager(new FabricItemSettings().maxCount(1)).setRarity(3);
     public static final Item MAGNET = new Magnet(new FabricItemSettings().maxCount(1).maxDamage(350)).setRarity(3).setDesc(Text.translatable("item.sakura_server.magnet.desc"));
     public static final Item ANGEL_WINGS_CORE = new SakuraItem(new FabricItemSettings()).setRarity(4);
+    public static final Item SACRED_FEATHERS = new SakuraItem(new FabricItemSettings()).setRarity(4);
+    public static final Item COMPRESSED_COPPER_1 = new SakuraItem(new FabricItemSettings()).setRarity(2);
+    public static final Item COMPRESSED_COPPER_2 = new SakuraItem(new FabricItemSettings()).setRarity(2);
+    public static final Item COMPRESSED_COPPER_3 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_4 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_5 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_6 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_7 = new SakuraItem(new FabricItemSettings()).setRarity(3);
+    public static final Item COMPRESSED_COPPER_8 = new SakuraItem(new FabricItemSettings()).setRarity(4);
+    public static final Item COMPRESSED_COPPER_9 = new SakuraItem(new FabricItemSettings()).setRarity(4);
+    public static final Item ANGEL_BLOCK_FRAMEWORK = new SakuraItem(new FabricItemSettings()).setRarity(4);
     //sword
     public static final SwordItem DRAGON_SWORD = new DragonSword();
     public static final SwordItem STARDUST_WAND = new StardustWand();
@@ -98,6 +110,13 @@ public class SakuraServer implements ModInitializer {
     public static final Identifier LIFT_DOWN = new Identifier(MODID, "lift_down");
     public static final Identifier VEIN_MINE_COUNT = new Identifier(MODID, "vein_mine_count");
     public static final Identifier DRAW_COUNT = new Identifier(MODID, "draw_count");
+    public static final Identifier BREAK_BLOCK_COUNT = new Identifier(MODID, "break_block_count");
+    public static final Identifier TOTAL_DAMAGE_TAKEN = new Identifier(MODID, "total_damage_taken");
+    public static final Identifier TOTAL_ONLINE_TIME = new Identifier(MODID, "total_online_time");
+    public static final Identifier TOTAL_DAMAGE_CAUSED = new Identifier(MODID, "total_damage_caused");
+    public static final Identifier TOTAL_PLAYER_DAMAGE_TAKEN = new Identifier(MODID, "total_player_damage_taken");
+    public static final Identifier TOTAL_PLAYER_DAMAGE_CAUSED = new Identifier(MODID, "total_player_damage_caused");
+    public static final Identifier PLACE_BLOCK_COUNT = new Identifier(MODID, "place_block_count");
     //sounds
     public static final Identifier DRAGON_ROAR = new Identifier(MODID, "dragon_roar");
     public static SoundEvent DRAGON_ROAR_SOUND = SoundEvent.of(DRAGON_ROAR);
@@ -117,14 +136,25 @@ public class SakuraServer implements ModInitializer {
                 entries.add(new ItemStack(MOVE_VILLAGER));
                 entries.add(new ItemStack(MAGNET));
                 entries.add(new ItemStack(ANGEL_WINGS_CORE));
-                entries.add(new ItemStack(TEST_RES));
+                entries.add(new ItemStack(SACRED_FEATHERS));
+                entries.add(new ItemStack(COMPRESSED_COPPER_1));
+                entries.add(new ItemStack(COMPRESSED_COPPER_2));
+                entries.add(new ItemStack(COMPRESSED_COPPER_3));
+                entries.add(new ItemStack(COMPRESSED_COPPER_4));
+                entries.add(new ItemStack(COMPRESSED_COPPER_5));
+                entries.add(new ItemStack(COMPRESSED_COPPER_6));
+                entries.add(new ItemStack(COMPRESSED_COPPER_7));
+                entries.add(new ItemStack(COMPRESSED_COPPER_8));
+                entries.add(new ItemStack(COMPRESSED_COPPER_9));
+                entries.add(new ItemStack(ANGEL_BLOCK_FRAMEWORK));
+                entries.add(new ItemStack(TEST_ITEM));
             })
             .build();
     //enchantment
     public static Enchantment SOUL_BOUND = new SoulBound(Enchantment.Rarity.RARE, EnchantmentTarget.VANISHABLE, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     public static Enchantment VEIN_MINE = new VeinMine(Enchantment.Rarity.RARE, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
 
-    public static void printLog(String log) {
+    public static void printDebugLog(String log) {
         // prevent usage if the Instance is not run in a development environment
         if (!FabricLoader.getInstance().isDevelopmentEnvironment()) return;
 
@@ -136,7 +166,7 @@ public class SakuraServer implements ModInitializer {
     public void onInitialize() {
         //reg
         //test
-        Registry.register(Registries.ITEM, new Identifier(MODID, "test"), TEST_RES);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "test_item"), TEST_ITEM);
         //block
         Registry.register(Registries.BLOCK, new Identifier(MODID, "lift"), LIFT);
         Registry.register(Registries.BLOCK, new Identifier(MODID, "angel_block"), ANGEL_BLOCK);
@@ -155,6 +185,17 @@ public class SakuraServer implements ModInitializer {
         Registry.register(Registries.ITEM, new Identifier(MODID, "stardust_wand"), STARDUST_WAND);
         Registry.register(Registries.ITEM, new Identifier(MODID, "magnet"), MAGNET);
         Registry.register(Registries.ITEM, new Identifier(MODID, "angel_wings_core"), ANGEL_WINGS_CORE);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "sacred_feathers"), SACRED_FEATHERS);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_1"), COMPRESSED_COPPER_1);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_2"), COMPRESSED_COPPER_2);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_3"), COMPRESSED_COPPER_3);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_4"), COMPRESSED_COPPER_4);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_5"), COMPRESSED_COPPER_5);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_6"), COMPRESSED_COPPER_6);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_7"), COMPRESSED_COPPER_7);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_8"), COMPRESSED_COPPER_8);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "compressed_copper_9"), COMPRESSED_COPPER_9);
+        Registry.register(Registries.ITEM, new Identifier(MODID, "angel_block_framework"), ANGEL_BLOCK_FRAMEWORK);
         //enchantment
         Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "soul_bound"), SOUL_BOUND);
         Registry.register(Registries.ENCHANTMENT, new Identifier(MODID, "vein_mine"), VEIN_MINE);
@@ -180,6 +221,20 @@ public class SakuraServer implements ModInitializer {
         Stats.CUSTOM.getOrCreateStat(VEIN_MINE_COUNT, StatFormatter.DEFAULT);
         Registry.register(Registries.CUSTOM_STAT, "draw_count", DRAW_COUNT);
         Stats.CUSTOM.getOrCreateStat(DRAW_COUNT, StatFormatter.DEFAULT);
+        Registry.register(Registries.CUSTOM_STAT, "break_block_count", BREAK_BLOCK_COUNT);
+        Stats.CUSTOM.getOrCreateStat(BREAK_BLOCK_COUNT, StatFormatter.DEFAULT);
+        Registry.register(Registries.CUSTOM_STAT, "total_damage_taken", TOTAL_DAMAGE_TAKEN);
+        Stats.CUSTOM.getOrCreateStat(TOTAL_DAMAGE_TAKEN, StatFormatter.DIVIDE_BY_TEN);
+        Registry.register(Registries.CUSTOM_STAT, "total_online_time", TOTAL_ONLINE_TIME);
+        Stats.CUSTOM.getOrCreateStat(TOTAL_ONLINE_TIME, StatFormatter.DEFAULT);
+        Registry.register(Registries.CUSTOM_STAT, "total_damage_caused", TOTAL_DAMAGE_CAUSED);
+        Stats.CUSTOM.getOrCreateStat(TOTAL_DAMAGE_CAUSED, StatFormatter.DIVIDE_BY_TEN);
+        Registry.register(Registries.CUSTOM_STAT, "total_player_damage_taken", TOTAL_PLAYER_DAMAGE_TAKEN);
+        Stats.CUSTOM.getOrCreateStat(TOTAL_PLAYER_DAMAGE_TAKEN, StatFormatter.DIVIDE_BY_TEN);
+        Registry.register(Registries.CUSTOM_STAT, "total_player_damage_caused", TOTAL_PLAYER_DAMAGE_CAUSED);
+        Stats.CUSTOM.getOrCreateStat(TOTAL_PLAYER_DAMAGE_CAUSED, StatFormatter.DIVIDE_BY_TEN);
+        Registry.register(Registries.CUSTOM_STAT, "place_block_count", PLACE_BLOCK_COUNT);
+        Stats.CUSTOM.getOrCreateStat(PLACE_BLOCK_COUNT, StatFormatter.DEFAULT);
         //sound
         Registry.register(Registries.SOUND_EVENT, DRAGON_ROAR, DRAGON_ROAR_SOUND);
         Registry.register(Registries.SOUND_EVENT, MAGNET_USE, MAGNET_USE_SOUND);
@@ -195,9 +250,9 @@ public class SakuraServer implements ModInitializer {
                 GeyserApi.api().eventBus().register(new GeyserExtension(), this);
             }));
         }
-        printLog("加载成功!");
-        printLog("是否加载Geyser:" + hasGeyser);
-        printLog("是否加载floodgate:" + hasFloodgate);
+        printDebugLog("加载成功!");
+        printDebugLog("是否加载Geyser:" + hasGeyser);
+        printDebugLog("是否加载floodgate:" + hasFloodgate);
     }
 
 

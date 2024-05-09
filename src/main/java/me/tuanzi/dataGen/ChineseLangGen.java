@@ -32,6 +32,17 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add(MOVE_VILLAGER, "村民移动者");
         translationBuilder.add(MAGNET, "磁铁");
         translationBuilder.add(ANGEL_WINGS_CORE, "天使之翼核心");
+        translationBuilder.add(SACRED_FEATHERS, "神圣之羽");
+        translationBuilder.add(COMPRESSED_COPPER_1, "一级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_2, "二级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_3, "三级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_4, "四级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_5, "五级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_6, "六级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_7, "七级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_8, "八级压缩铜锭");
+        translationBuilder.add(COMPRESSED_COPPER_9, "九级压缩铜锭");
+        translationBuilder.add(ANGEL_BLOCK_FRAMEWORK, "天使方块框架");
         translationBuilder.add(DRAGON_SWORD, "龙剑");
         translationBuilder.add(STARDUST_WAND, "星光魔杖");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "您不是他的主人,无法绑定!");
@@ -83,5 +94,13 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("stat.sakura_server.lift_up", "使用电梯上升的次数");
         translationBuilder.add("stat.sakura_server.lift_down", "使用电梯下降的次数");
         translationBuilder.add("stat.sakura_server.vein_mine_count", "连锁挖掘方块总数量");
+        translationBuilder.add("stat.sakura_server.draw_count", "抽卡总数");
+        translationBuilder.add("stat.sakura_server.break_block_count", "破坏方块总数");
+        translationBuilder.add("stat.sakura_server.total_damage_taken", "受到的总伤害");
+        translationBuilder.add("stat.sakura_server.total_online_time", "总在线时长(分钟)");
+        translationBuilder.add("stat.sakura_server.total_damage_caused", "造成的总伤害");
+        translationBuilder.add("stat.sakura_server.total_player_damage_taken", "受到来自玩家的总伤害");
+        translationBuilder.add("stat.sakura_server.total_player_damage_caused", "对玩家造成的总伤害");
+        translationBuilder.add("stat.sakura_server.place_block_count", "放置方块的数量");
     }
 }

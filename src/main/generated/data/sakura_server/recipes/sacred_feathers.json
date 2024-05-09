@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:ender_pearl"
+    },
+    "b": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "c": {
+      "item": "minecraft:feather"
+    },
+    "d": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "e": {
+      "item": "minecraft:nether_star"
+    },
+    "f": {
+      "item": "minecraft:experience_bottle"
+    }
+  },
+  "pattern": [
+    " a ",
+    "bcb",
+    "def"
+  ],
+  "result": {
+    "item": "sakura_server:sacred_feathers"
+  }
+}

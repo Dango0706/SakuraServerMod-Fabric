@@ -7,9 +7,11 @@ import me.tuanzi.effects.events.EffectsEvents;
 import me.tuanzi.enchantments.events.SoulBoundEvent;
 import me.tuanzi.enchantments.events.VeinMineEvent;
 import me.tuanzi.events.*;
-import me.tuanzi.fix.events.BlockBreak;
+import me.tuanzi.features.events.BlockBreak;
+import me.tuanzi.features.events.PlayerDeath;
 import me.tuanzi.items.events.FunctionalItemEvents;
-import me.tuanzi.stats.DamageStats;
+import me.tuanzi.stats.events.DamageStats;
+import me.tuanzi.stats.events.PlayerBreakBlock;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
@@ -38,8 +40,11 @@ public class EventRegister {
         PlayerBlockBreakEvents.AFTER.register(new VeinMineEvent());
         //stats
         ServerLivingEntityEvents.ALLOW_DAMAGE.register(new DamageStats());
-        //fix
+        PlayerBlockBreakEvents.AFTER.register(new PlayerBreakBlock());
+        PlayerTickEvent.EVENT.register(new PlayerBreakBlock());
+        //feature
         AttackBlockCallback.EVENT.register(new BlockBreak());
+        ServerLivingEntityEvents.AFTER_DEATH.register(new PlayerDeath());
         //geyser
         ServerPlayConnectionEvents.JOIN.register(new PlayerJoinEvent());
         //test

@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_angel_block_framework": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sakura_server:angel_block_framework"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_angel_wings_core": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sakura_server:angel_wings_core"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_honeycomb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:honeycomb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sacred_feathers": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "sakura_server:sacred_feathers"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sakura_server:angel_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_angel_block_framework",
+      "has_sacred_feathers",
+      "has_angel_wings_core",
+      "has_honeycomb"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sakura_server:angel_block"
+    ]
+  }
+}

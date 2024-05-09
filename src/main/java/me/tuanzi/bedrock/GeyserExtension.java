@@ -11,7 +11,7 @@ import org.geysermc.geyser.api.extension.Extension;
 import org.geysermc.geyser.api.item.custom.CustomItemOptions;
 import org.geysermc.geyser.api.item.custom.NonVanillaCustomItemData;
 
-import static me.tuanzi.SakuraServer.printLog;
+import static me.tuanzi.SakuraServer.printDebugLog;
 
 public class GeyserExtension implements Extension {
 
@@ -48,7 +48,7 @@ public class GeyserExtension implements Extension {
                 .textureSize(32)
                 .build();
         event.register(emerald_apple);
-        printLog("成?:" + event.register(emerald_apple));
+        printDebugLog("成?:" + event.register(emerald_apple));
     }
 
 }

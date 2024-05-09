@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "sakura_server:compressed_copper_2"
+    },
+    {
+      "item": "sakura_server:compressed_copper_2"
+    },
+    {
+      "item": "sakura_server:compressed_copper_2"
+    },
+    {
+      "item": "sakura_server:compressed_copper_2"
+    }
+  ],
+  "result": {
+    "item": "sakura_server:compressed_copper_3"
+  }
+}

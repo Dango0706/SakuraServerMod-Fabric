@@ -181,7 +181,7 @@ public class VeinMineEvent implements PlayerBlockBreakEvents.After {
                 }
             }
         }
-        printLog("连锁破坏了:" + i);
+        printDebugLog("连锁破坏了:" + i);
         player.increaseStat(VEIN_MINE_COUNT, i);
         return true;
     }

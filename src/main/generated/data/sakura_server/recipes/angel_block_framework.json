@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:diamond_block"
+    },
+    "b": {
+      "item": "minecraft:netherite_block"
+    },
+    "c": {
+      "item": "minecraft:respawn_anchor"
+    },
+    "d": {
+      "item": "minecraft:dragon_head"
+    },
+    "e": {
+      "item": "sakura_server:compressed_copper_9"
+    }
+  },
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ded"
+  ],
+  "result": {
+    "item": "sakura_server:angel_block_framework"
+  }
+}

@@ -34,6 +34,17 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add(ANGEL_WINGS_CORE, "Angel Wings Core");
         translationBuilder.add(DRAGON_SWORD,"Dragon Sword");
         translationBuilder.add(STARDUST_WAND, "Stardust Wand");
+        translationBuilder.add(SACRED_FEATHERS, "Sacred Feathers");
+        translationBuilder.add(COMPRESSED_COPPER_1, "Primary compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_2, "Secondary compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_3, "Tertiary compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_4, "Quaternary compressed copper ingots");
+        translationBuilder.add(COMPRESSED_COPPER_5, "Five-grade compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_6, "Six-grade compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_7, "Seven-grade compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_8, "Eight-grade compressed copper ingot");
+        translationBuilder.add(COMPRESSED_COPPER_9, "Nine-grade compressed copper ingot");
+        translationBuilder.add(ANGEL_BLOCK_FRAMEWORK, "Angel block framework");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "You don't own him, you can't bind him!");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_tamed", "He's not tamed yet! Unable to bind");
         translationBuilder.add("item.sakura_server.soul_gem.fail.has_entity", "This SoulGem already has a binding!");
@@ -83,5 +94,13 @@ public class EnglishLangGen extends FabricLanguageProvider {
         translationBuilder.add("stat.sakura_server.lift_up", "Number of elevator rises used");
         translationBuilder.add("stat.sakura_server.lift_down", "Number of elevator descents used");
         translationBuilder.add("stat.sakura_server.vein_mine_count", "Total number of vein mine cubes");
+        translationBuilder.add("stat.sakura_server.draw_count", "Total number of gachas");
+        translationBuilder.add("stat.sakura_server.break_block_count", "Total number of blocks destroyed");
+        translationBuilder.add("stat.sakura_server.total_damage_taken", "Total damage taken");
+        translationBuilder.add("stat.sakura_server.total_online_time", "Total online time (minutes)");
+        translationBuilder.add("stat.sakura_server.total_damage_caused", "Total damage done");
+        translationBuilder.add("stat.sakura_server.total_player_damage_taken", "Takes total damage from players");
+        translationBuilder.add("stat.sakura_server.total_player_damage_caused", "Total damage dealt to the player");
+        translationBuilder.add("stat.sakura_server.place_block_count", "The number of blocks to place");
     }
 }

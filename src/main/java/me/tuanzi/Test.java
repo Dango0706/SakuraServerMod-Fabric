@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 
-import static me.tuanzi.SakuraServer.printLog;
+import static me.tuanzi.SakuraServer.printDebugLog;
 
 public class Test implements ServerLivingEntityEvents.AllowDamage, LivingEntityModifyAppliedDamage.BEFORE_ENCHANTMENT, LivingEntityModifyAppliedDamage.BEFORE_EFFECT, LivingEntityFinalDamage {
 
@@ -63,23 +63,23 @@ public class Test implements ServerLivingEntityEvents.AllowDamage, LivingEntityM
      */
     @Override
     public boolean allowDamage(LivingEntity entity, DamageSource source, float amount) {
-        printLog("计算前:" + amount);
+        printDebugLog("计算前:" + amount);
         return true;
     }
 
     @Override
     public void modifyAppliedDamageProtection(LivingEntity livingEntity, DamageSource source, float amount) {
-        printLog("附魔前:" + amount);
+        printDebugLog("附魔前:" + amount);
     }
 
     @Override
     public void modifyAppliedDamageEffect(LivingEntity livingEntity, DamageSource source, float amount) {
-        printLog("药水前:" + amount);
+        printDebugLog("药水前:" + amount);
     }
 
     @Override
     public void applyDamage(LivingEntity livingEntity, DamageSource source, float amount) {
-        printLog("最终:" + amount);
+        printDebugLog("最终:" + amount);
     }
 
 }

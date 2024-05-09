@@ -18,12 +18,12 @@ public class PlayerJoinEvent implements ServerPlayConnectionEvents.Join {
         ServerPlayerEntity serverPlayer = handler.getPlayer();
         if (hasGeyser) {
             if (FloodgateApi.getInstance().isFloodgatePlayer(serverPlayer.getUuid()) || GeyserApi.api().isBedrockPlayer(serverPlayer.getUuid())) {
-                printLog("是手机版玩家!!");
+                printDebugLog("是手机版玩家!!");
                 BEDROCK_UUIDS.add(serverPlayer.getUuid());
             }
         }
 
-        printLog(serverPlayer.getUuid().toString());
+        printDebugLog(serverPlayer.getUuid().toString());
 
     }
 }

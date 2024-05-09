@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "sakura_server:compressed_copper_1"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:copper_ingot"
+  }
+}
