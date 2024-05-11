@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "sakura_server:lift",
-    "sakura_server:angel_block"
+    "sakura_server:angel_block",
+    "sakura_server:sorter"
   ]
 }

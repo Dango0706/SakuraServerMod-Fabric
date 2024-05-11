@@ -18,6 +18,7 @@ public class ModelGen extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(LIFT);
         blockStateModelGenerator.registerSimpleCubeAll(ANGEL_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(SORTER);
     }
 
     @Override

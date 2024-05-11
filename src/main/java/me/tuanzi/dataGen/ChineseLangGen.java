@@ -23,9 +23,11 @@ public class ChineseLangGen extends FabricLanguageProvider {
         //block
         translationBuilder.add(LIFT, "电梯");
         translationBuilder.add(ANGEL_BLOCK, "天使方块");
+        translationBuilder.add(SORTER, "物品分类者");
         translationBuilder.add("block.sakura_server.angel_block.on", "现在启动范围内飞行!");
         translationBuilder.add("block.sakura_server.angel_block.off", "现在关闭范围内飞行!");
         translationBuilder.add("block.sakura_server.angel_block.range", "飞行范围设置为:%d");
+        translationBuilder.add("block.sakura_server.sorter.range", "自动整理箱子范围设置为:%d");
         //item
         translationBuilder.add(EMERALD_APPLE, "绿宝石苹果");
         translationBuilder.add(SOUL_GEM, "灵魂宝石");

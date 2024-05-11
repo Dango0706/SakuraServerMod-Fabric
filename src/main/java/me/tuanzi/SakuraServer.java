@@ -4,6 +4,8 @@ import me.tuanzi.bedrock.GeyserExtension;
 import me.tuanzi.blocks.angel_block.AngelBlock;
 import me.tuanzi.blocks.angel_block.AngelBlockEntity;
 import me.tuanzi.blocks.lift.Lift;
+import me.tuanzi.blocks.sorter.Sorter;
+import me.tuanzi.blocks.sorter.SorterBlockEntity;
 import me.tuanzi.effects.AngelWings;
 import me.tuanzi.effects.DragonSwordEffect;
 import me.tuanzi.effects.Healbane;
@@ -69,8 +71,10 @@ public class SakuraServer implements ModInitializer {
     public static final SakuraToolMaterial LEG_TOOLS = new SakuraToolMaterial(5);
     //block
     public static final Block LIFT = new Lift(FabricBlockSettings.create().strength(4.0f).requiresTool());
-    public static final Block ANGEL_BLOCK = new AngelBlock(FabricBlockSettings.create().strength(-1,20000000).requiresTool());
+    public static final Block ANGEL_BLOCK = new AngelBlock(FabricBlockSettings.create().strength(20,80).requiresTool());
+    public static final Block SORTER = new Sorter(FabricBlockSettings.create().strength(15,20).nonOpaque().requiresTool());
     public static  BlockEntityType<AngelBlockEntity> ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
+    public static  BlockEntityType<SorterBlockEntity> SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
     //item
     public static final Item EMERALD_APPLE = new EmeraldApple();
     public static final Item TEST_ITEM = new TestItem(new FabricItemSettings());
@@ -129,6 +133,7 @@ public class SakuraServer implements ModInitializer {
             .entries((context, entries) -> {
                 entries.add(new ItemStack(LIFT));
                 entries.add(new ItemStack(ANGEL_BLOCK));
+                entries.add(new ItemStack(SORTER));
                 entries.add(new ItemStack(EMERALD_APPLE));
                 entries.add(new ItemStack(SOUL_GEM));
                 entries.add(new ItemStack(DRAGON_SWORD));
@@ -175,9 +180,17 @@ public class SakuraServer implements ModInitializer {
                 new Identifier(MODID, "angel_block_entity"),
                 FabricBlockEntityTypeBuilder.create(AngelBlockEntity::new, ANGEL_BLOCK).build()
         );
+        Registry.register(Registries.BLOCK, new Identifier(MODID, "sorter"), SORTER);
+        SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = Registry.register(
+                Registries.BLOCK_ENTITY_TYPE,
+                new Identifier(MODID, "sorter_block_entity"),
+                FabricBlockEntityTypeBuilder.create(SorterBlockEntity::new, SORTER).build()
+        );
         //item
         Registry.register(Registries.ITEM, new Identifier(MODID, "lift"), new SakuraBlockItem(LIFT, new FabricItemSettings(),3));
         Registry.register(Registries.ITEM, new Identifier(MODID, "angel_block"), new SakuraBlockItem(ANGEL_BLOCK, new FabricItemSettings(),5));
+        Registry.register(Registries.ITEM, new Identifier(MODID, "sorter"),
+                new SakuraBlockItem(SORTER, new FabricItemSettings(),3));
         Registry.register(Registries.ITEM, new Identifier(MODID, "emerald_apple"), EMERALD_APPLE);
         Registry.register(Registries.ITEM, new Identifier(MODID, "soul_gem"), SOUL_GEM);
         Registry.register(Registries.ITEM, new Identifier(MODID, "villager_mover"), MOVE_VILLAGER);

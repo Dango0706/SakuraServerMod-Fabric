@@ -169,7 +169,6 @@ public class RecipeGen extends FabricRecipeProvider {
                 .offerTo(exporter);
         //村民移动者
         //1.20.4-beta4 暂时移除
-
 /*        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, MOVE_VILLAGER)
                 .input(Items.EMERALD)
                 .criterion(FabricRecipeProvider.hasItem(Items.EMERALD),
@@ -184,112 +183,42 @@ public class RecipeGen extends FabricRecipeProvider {
         decomposed(COMPRESSED_COPPER_6, COMPRESSED_COPPER_5, 4, exporter);
         decomposed(COMPRESSED_COPPER_7, COMPRESSED_COPPER_6, 4, exporter);
         decomposed(COMPRESSED_COPPER_8, COMPRESSED_COPPER_7, 4, exporter);
-        /*
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_1)
-                .input(Items.COPPER_INGOT, 4)
-                .criterion(FabricRecipeProvider.hasItem(Items.COPPER_INGOT),
-                        FabricRecipeProvider.conditionsFromItem(Items.COPPER_INGOT))
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_1),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_1))
-                .offerTo(exporter);
-        //压缩铜锭1
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_1, 4)
-                .input(COMPRESSED_COPPER_2)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_2),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_2))
-                .offerTo(exporter, another(COMPRESSED_COPPER_1));
-        //压缩铜锭2
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_2)
-                .input(COMPRESSED_COPPER_1, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_1),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_1))
-                .offerTo(exporter);
-        //压缩铜锭2
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_2, 4)
-                .input(COMPRESSED_COPPER_3)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_3),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_3))
-                .offerTo(exporter, another(COMPRESSED_COPPER_2));
-        //压缩铜锭3
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_3)
-                .input(COMPRESSED_COPPER_2, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_2),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_2))
-                .offerTo(exporter);
-        //压缩铜锭3
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_3, 4)
-                .input(COMPRESSED_COPPER_4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_4),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_4))
-                .offerTo(exporter, another(COMPRESSED_COPPER_3));
-        //压缩铜锭4
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_4)
-                .input(COMPRESSED_COPPER_3, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_3),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_3))
-                .offerTo(exporter);
-        //压缩铜锭4
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_4, 4)
-                .input(COMPRESSED_COPPER_5)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_5),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_5))
-                .offerTo(exporter, another(COMPRESSED_COPPER_4));
-        //压缩铜锭5
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_5)
-                .input(COMPRESSED_COPPER_4, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_4),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_4))
-                .offerTo(exporter);
-        //压缩铜锭5
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_5, 4)
-                .input(COMPRESSED_COPPER_6)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_6),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_6))
-                .offerTo(exporter, another(COMPRESSED_COPPER_5));
-        //压缩铜锭6
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_6)
-                .input(COMPRESSED_COPPER_5, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_5),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_5))
-                .offerTo(exporter);
-        //压缩铜锭6
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_6, 4)
-                .input(COMPRESSED_COPPER_7)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_7),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_7))
-                .offerTo(exporter, another(COMPRESSED_COPPER_6));
-        //压缩铜锭7
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_7)
-                .input(COMPRESSED_COPPER_6, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_6),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_6))
-                .offerTo(exporter);
-        //压缩铜锭7
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_7, 4)
-                .input(COMPRESSED_COPPER_8)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_8),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_8))
-                .offerTo(exporter, another(COMPRESSED_COPPER_7));
-        //压缩铜锭8
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_8)
-                .input(COMPRESSED_COPPER_7, 4)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_7),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_7))
-                .offerTo(exporter);
-        //压缩铜锭8
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_8, 4)
-                .input(COMPRESSED_COPPER_9)
-                .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_9),
-                        FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_9))
-                .offerTo(exporter, another(COMPRESSED_COPPER_8));*/
         //压缩铜锭9
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, COMPRESSED_COPPER_9)
                 .input(COMPRESSED_COPPER_8, 4)
                 .criterion(FabricRecipeProvider.hasItem(COMPRESSED_COPPER_8),
                         FabricRecipeProvider.conditionsFromItem(COMPRESSED_COPPER_8))
                 .offerTo(exporter);
-
-
+        //物品分类者
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, SORTER)
+                .input(Items.STICKY_PISTON)
+                .input(Items.ENDER_PEARL)
+                .input(Items.TARGET)
+                .input(Items.LAVA_BUCKET)
+                .input(Items.REDSTONE_BLOCK)
+                .input(Items.DISPENSER)
+                .input(Items.COMPARATOR)
+                .input(Items.BARREL)
+                .input(Items.HOPPER_MINECART)
+                .criterion(FabricRecipeProvider.hasItem(Items.STICKY_PISTON),
+                        FabricRecipeProvider.conditionsFromItem(Items.STICKY_PISTON))
+                .criterion(FabricRecipeProvider.hasItem(Items.ENDER_PEARL),
+                        FabricRecipeProvider.conditionsFromItem(Items.ENDER_PEARL))
+                .criterion(FabricRecipeProvider.hasItem(Items.TARGET),
+                        FabricRecipeProvider.conditionsFromItem(Items.TARGET))
+                .criterion(FabricRecipeProvider.hasItem(Items.LAVA_BUCKET),
+                        FabricRecipeProvider.conditionsFromItem(Items.LAVA_BUCKET))
+                .criterion(FabricRecipeProvider.hasItem(Items.REDSTONE_BLOCK),
+                        FabricRecipeProvider.conditionsFromItem(Items.REDSTONE_BLOCK))
+                .criterion(FabricRecipeProvider.hasItem(Items.DISPENSER),
+                        FabricRecipeProvider.conditionsFromItem(Items.DISPENSER))
+                .criterion(FabricRecipeProvider.hasItem(Items.COMPARATOR),
+                        FabricRecipeProvider.conditionsFromItem(Items.COMPARATOR))
+                .criterion(FabricRecipeProvider.hasItem(Items.BARREL),
+                        FabricRecipeProvider.conditionsFromItem(Items.BARREL))
+                .criterion(FabricRecipeProvider.hasItem(Items.HOPPER_MINECART),
+                        FabricRecipeProvider.conditionsFromItem(Items.HOPPER_MINECART))
+                .offerTo(exporter);
     }
 
     public Identifier another(Item item) {

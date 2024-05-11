@@ -4,6 +4,8 @@
   "block.sakura_server.angel_block.on": "现在启动范围内飞行!",
   "block.sakura_server.angel_block.range": "飞行范围设置为:%d",
   "block.sakura_server.lift": "电梯",
+  "block.sakura_server.sorter": "物品分类者",
+  "block.sakura_server.sorter.range": "自动整理箱子范围设置为:%d",
   "commands.sakura_server.error.not_player": "此命令非玩家发出.",
   "commands.sakura_server.removeLore.ok": "成功清除身上%d件物品的lore信息.",
   "effect.sakura_server.angel_wings": "天使之翼",
