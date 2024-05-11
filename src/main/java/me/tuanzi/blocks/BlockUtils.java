@@ -75,10 +75,10 @@ public class BlockUtils {
                         pos1 = pos.add(Direction.WEST.getVector());
                     }
                     if (face == Direction.WEST) {
-                        pos1 = pos.add(Direction.SOUTH.getVector());
+                        pos1 = pos.add(Direction.NORTH.getVector());
                     }
                     if (face == Direction.EAST) {
-                        pos1 = pos.add(Direction.NORTH.getVector());
+                        pos1 = pos.add(Direction.SOUTH.getVector());
                     }
                 } else {
                     if (face == Direction.NORTH) {
@@ -88,10 +88,10 @@ public class BlockUtils {
                         pos1 = pos.add(Direction.EAST.getVector());
                     }
                     if (face == Direction.WEST) {
-                        pos1 = pos.add(Direction.NORTH.getVector());
+                        pos1 = pos.add(Direction.SOUTH.getVector());
                     }
                     if (face == Direction.EAST) {
-                        pos1 = pos.add(Direction.SOUTH.getVector());
+                        pos1 = pos.add(Direction.NORTH.getVector());
                     }
                 }
                 return pos1;

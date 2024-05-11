@@ -37,8 +37,6 @@ public class SorterBlockEntity extends BlockEntity {
 
     public static void tick(World world, BlockPos pos, BlockState state, BlockEntity entity) {
         if (entity instanceof SorterBlockEntity && !world.isClient) {
-
-
             //获得此方块上面的方块pos
             BlockPos chestPos = pos.add(Direction.UP.getVector());
             //若是大箱子,则获取另外一个箱子的pos
@@ -120,6 +118,7 @@ public class SorterBlockEntity extends BlockEntity {
                             }
                         }
                     }
+                    //如果激活
                     if (state.get(SORTER_USED)) {
                         //遍历需要整理的物品
                         for (ItemStack itemStack : needSortItems) {
@@ -132,6 +131,9 @@ public class SorterBlockEntity extends BlockEntity {
                                 for (BlockPos blockPos : sortChestPos) {
                                     //无需判断是否是大箱子.
                                     ChestBlockEntity sortChestBlockEntity = (ChestBlockEntity) world.getBlockEntity(blockPos);
+                                    if(sortChestBlockEntity == null){
+                                        return;
+                                    }
                                     for (int i = 0; i < sortChestBlockEntity.size(); i++) {
                                         //获得箱子对应格子的ItemStack
                                         ItemStack itemStack1 = sortChestBlockEntity.getStack(i);
