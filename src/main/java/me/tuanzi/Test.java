@@ -2,14 +2,32 @@ package me.tuanzi;
 
 import me.tuanzi.events.LivingEntityFinalDamage;
 import me.tuanzi.events.LivingEntityModifyAppliedDamage;
+import me.tuanzi.events.PlayerTickEvent;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Items;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
+import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 import static me.tuanzi.SakuraServer.printDebugLog;
 
-public class Test implements ServerLivingEntityEvents.AllowDamage, LivingEntityModifyAppliedDamage.BEFORE_ENCHANTMENT, LivingEntityModifyAppliedDamage.BEFORE_EFFECT, LivingEntityFinalDamage {
+public class Test implements PlayerTickEvent, ServerLivingEntityEvents.AllowDamage, LivingEntityModifyAppliedDamage.BEFORE_ENCHANTMENT, LivingEntityModifyAppliedDamage.BEFORE_EFFECT, LivingEntityFinalDamage {
 
+
+    private Queue<BlockPos> blocksToCheck;
+    private List<BlockPos> foundBlocks;
+    private int batchSize;
+    private Box searchArea;
 
     public static void main(String[] args) {
         float amount = 10;
@@ -81,5 +99,53 @@ public class Test implements ServerLivingEntityEvents.AllowDamage, LivingEntityM
     public void applyDamage(LivingEntity livingEntity, DamageSource source, float amount) {
         printDebugLog("最终:" + amount);
     }
+
+    @Override
+    public void tick(PlayerEntity player) {
+        if (!player.getWorld().isClient && player.getMainHandStack().isOf(Items.DIAMOND)) {
+            Box area = new Box(player.getBlockPos()).expand(50);
+
+            this.searchArea = area;
+            this.batchSize = 2500;
+            this.blocksToCheck = new LinkedList<>();
+            this.foundBlocks = new ArrayList<>();
+
+            // 初始化blocksToCheck队列
+            for (int x = (int) area.minX; x <= area.maxX; x++) {
+                for (int y = (int) area.minY; y <= area.maxY; y++) {
+                    for (int z = (int) area.minZ; z <= area.maxZ; z++) {
+                        blocksToCheck.add(new BlockPos(x, y, z));
+                    }
+                }
+            }
+
+            int processed = 0;
+            while (!blocksToCheck.isEmpty() && processed < batchSize) {
+                BlockPos current = blocksToCheck.poll();
+                // 检查方块逻辑
+                if (checkBlock(player.getWorld(), current)) {
+                    foundBlocks.add(current);
+                }
+                processed++;
+            }
+
+            if (blocksToCheck.isEmpty()) {
+                // 所有方块检查完毕
+                for (BlockPos foundBlock : foundBlocks) {
+                    System.out.println(foundBlock);
+                }
+            }
+
+        }
+    }
+
+    private boolean checkBlock(World world, BlockPos pos) {
+        // 实现你的方块检查逻辑
+        // 返回true如果方块是你想要添加到列表中的
+
+        BlockState blockState = world.getBlockState(pos);
+        return blockState.isOf(Blocks.CHEST);
+    }
+
 
 }

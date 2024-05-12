@@ -31,6 +31,8 @@ public class SorterBlockEntity extends BlockEntity {
     static int tick = 0;
     static int tick2 = 0;
 
+    static Queue<BlockPos> queue = new LinkedList<>();
+
     public SorterBlockEntity(BlockPos pos, BlockState state) {
         super(SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, pos, state);
     }
@@ -72,19 +74,31 @@ public class SorterBlockEntity extends BlockEntity {
                     //寻找Range内的箱子
                     //少使用此函数
                     //每5s~10s查找一次箱子在哪
-                    if (tick >= world.getRandom().nextBetween(100, 200)) {
-                        tick = 0;
-                        canSortChestBlockPos.clear();
+                    //使用queue,性能大幅提升.
+                    if (queue.isEmpty()) {
                         for (int x = (int) box.minX; x < box.maxX; x++) {
                             for (int y = (int) box.minY; y < box.maxY; y++) {
                                 for (int z = (int) box.minZ; z < box.maxZ; z++) {
-                                    BlockPos blockPos = new BlockPos(x, y, z);
-                                    BlockState blockState = world.getBlockState(blockPos);
-                                    if (blockState.isOf(Blocks.CHEST) && blockPos != chestPos && blockPos != anotherChestPos) {
-                                        canSortChestBlockPos.add(blockPos);
-                                    }
+                                    queue.add(new BlockPos(x, y, z));
                                 }
                             }
+                        }
+                    }
+                    int b = 0;
+                    //一次处理百分之一的方快数量.
+                    while (b <= queue.size() / 100 && !queue.isEmpty()) {
+                        b++;
+                        BlockPos que = queue.poll();
+                        BlockState blockState = world.getBlockState(que);
+                        //如果包括则检查是否还是箱子,若不是则移除.
+                        if(canSortChestBlockPos.contains(que)){
+                            if(!blockState.isOf(Blocks.CHEST))
+                                canSortChestBlockPos.remove(que);
+                            continue;
+                        }
+                        //否则检查是否是箱子以及是否是自己,全正确后添加.
+                        if (blockState.isOf(Blocks.CHEST) && que != chestPos && que != anotherChestPos) {
+                            canSortChestBlockPos.add(que);
                         }
                     }
                     //查找他前后左右上下是否贴了物品展示框
@@ -131,7 +145,7 @@ public class SorterBlockEntity extends BlockEntity {
                                 for (BlockPos blockPos : sortChestPos) {
                                     //无需判断是否是大箱子.
                                     ChestBlockEntity sortChestBlockEntity = (ChestBlockEntity) world.getBlockEntity(blockPos);
-                                    if(sortChestBlockEntity == null){
+                                    if (sortChestBlockEntity == null) {
                                         return;
                                     }
                                     for (int i = 0; i < sortChestBlockEntity.size(); i++) {

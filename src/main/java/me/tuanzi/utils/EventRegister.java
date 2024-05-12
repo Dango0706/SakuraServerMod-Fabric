@@ -53,6 +53,7 @@ public class EventRegister {
             LivingEntityModifyAppliedDamage.EFFECT.register(new Test());
             LivingEntityModifyAppliedDamage.PROTECTION.register(new Test());
             ServerLivingEntityEvents.ALLOW_DAMAGE.register(new Test());
+            PlayerTickEvent.EVENT.register(new Test());
         }
     }
 }
