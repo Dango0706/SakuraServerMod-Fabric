@@ -1,6 +1,7 @@
-package me.tuanzi.items;
+package me.tuanzi.items.utils;
 
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static me.tuanzi.items.ItemUtils.getColor;
+import static me.tuanzi.items.utils.ItemUtils.getColor;
 
 public class SakuraItem extends Item {
     private int Rarity = 0;
@@ -59,6 +60,8 @@ public class SakuraItem extends Item {
      */
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        //clinet only
+        //Screen.hasShiftDown()
         if (getDesc().size() != 0)
             tooltip.addAll(getDesc());
         super.appendTooltip(stack, world, tooltip, context);
@@ -71,6 +74,10 @@ public class SakuraItem extends Item {
 
 
     public void inInventoryTick(PlayerEntity player, World world, ItemStack itemStack) {
+
+    }
+
+    public void itemEntityTick(ItemEntity itemEntity, World world, ItemStack itemStack){
 
     }
 

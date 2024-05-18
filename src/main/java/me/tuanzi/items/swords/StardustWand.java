@@ -1,6 +1,7 @@
 package me.tuanzi.items.swords;
 
-import me.tuanzi.items.SakuraSword;
+import me.tuanzi.items.utils.CanNotBeCopy;
+import me.tuanzi.items.utils.SakuraSword;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.LivingEntity;
@@ -26,7 +27,7 @@ import static me.tuanzi.SakuraServer.HEALBANE;
 import static me.tuanzi.SakuraServer.LEG_TOOLS;
 import static net.minecraft.util.UseAction.SPEAR;
 
-public class StardustWand extends SakuraSword {
+public class StardustWand extends SakuraSword  implements CanNotBeCopy {
 
     public StardustWand() {
         super(LEG_TOOLS, 8, 1.6f, new Settings(), LEG_TOOLS.getRarity(),
@@ -57,7 +58,6 @@ public class StardustWand extends SakuraSword {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         super.onStoppedUsing(stack, world, user, remainingUseTicks);
-
     }
 
     /**

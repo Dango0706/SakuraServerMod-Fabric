@@ -1,11 +1,11 @@
-package me.tuanzi.items;
+package me.tuanzi.items.utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 
-import static me.tuanzi.items.ItemUtils.getColor;
+import static me.tuanzi.items.utils.ItemUtils.getColor;
 
 public class SakuraBlockItem extends BlockItem {
     private int Rarity = 1;

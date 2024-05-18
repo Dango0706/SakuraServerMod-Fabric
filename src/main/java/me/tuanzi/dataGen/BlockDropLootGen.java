@@ -22,5 +22,7 @@ public class BlockDropLootGen extends FabricBlockLootTableProvider {
         addDrop(LIFT,drops(LIFT));
         addDrop(ANGEL_BLOCK,drops(ANGEL_BLOCK));
         addDrop(SORTER,drops(SORTER));
+        addDrop(TIMESPACE_ORE,drops(TIMESPACE_SHARDS));
+        addDrop(STELLAR_PROMISE_ORE,drops(STELLAR_PROMISE));
     }
 }

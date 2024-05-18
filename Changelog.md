@@ -1,3 +1,128 @@
+## 1.20.4.3 beta6:
+
+### 新增:
+
+### 新系统:抽卡系统.
+### 新物品:梦境之钥,星辰之诺,赌狗镐,反物质镐,星辰之石,复制者,浩瀚之星,时空碎片,时空宝石,时空矿石,时空工具组合,死亡卷轴,下界合金锤.
+### 新附魔:教育,强化锋利,亡灵杀手,节肢杀手,强化力量.
+
+### 抽卡系统:
+
+使用梦境之钥,星辰之诺抽卡.  
+抽卡概率同隔壁某二字游戏,还有不知道多少字的游戏.  
+9个可以合成一个十连抽(官方九折!)  
+两个物品分别代表不同的卡池.  
+使用潜行＋右键查看对应物品卡池.  
+两个卡池可以随时切换(合成兑换).  
+
+### 新物品:
+
+#### 梦境之钥:
+![](src/main/resources/assets/sakura_server/textures/item/dream_key.png)  
+抽卡材料.  
+![img_5.png](img_5.png)  
+
+#### 十连梦境之钥:
+![img_6.png](img_6.png)  
+可以抽卡十次!  
+
+#### 星辰之诺:  
+![](src/main/resources/assets/sakura_server/textures/item/stellar_promise.png)  
+抽卡材料.  
+挖掘星辰之石掉落.  
+
+#### 十连星辰之诺:
+![img_7.png](img_7.png)  
+可以抽卡十次!  
+
+#### (tips:抽卡物品可以互相转化.)
+
+#### 赌狗镐:
+![](src/main/resources/assets/sakura_server/textures/item/gambling_pickaxe.png)  
+挖掘任何一个方块,开始你的豪赌!  
+所有,或者一无所有!  
+挖掘有50%概率掉落多倍原本掉落物品,还有可能啥也不掉!!  
+仅能通过抽卡获得.
+
+
+#### 反物质镐:
+![](src/main/resources/assets/sakura_server/textures/item/antimatter_pickaxe.png)  
+挖掘任何一个方块,开始你的豪赌!  
+所有,或者一无所有!  
+挖掘随机掉落所有物品之一.  
+仅能通过抽卡获得
+
+#### 星辰之石:  
+![](src/main/resources/assets/sakura_server/textures/block/stellar_promise_ore.png)  
+需要5级的挖掘等级.  
+极少数的出现在地下-64~-48层之间.  
+挖掘后掉落星辰之诺.
+
+#### 时空矿石:
+![](src/main/resources/assets/sakura_server/textures/block/timespace_ore.png)  
+产生在末地的矿物.  
+挖掘掉落时空碎片.
+在末地低于20层的位置产生.  
+
+#### 复制者:
+![](src/main/resources/assets/sakura_server/textures/item/replicators.png)  
+可以复制绝大多数物品一次.  
+但只能复制最基础的,无法继承nbt.  
+由于力量的缺失导致某一些物品无法被复制.  
+
+#### 浩瀚之星:
+![](src/main/resources/assets/sakura_server/textures/item/vast_star.png)  
+抽卡掉落的副产物.  
+五个可以合成一个梦境之钥.  
+
+#### 时空碎片:
+![](src/main/resources/assets/sakura_server/textures/item/timespace_shards.png)  
+时空矿石的掉落物.
+合成物品.
+
+#### 时空宝石:
+![](src/main/resources/assets/sakura_server/textures/item/timespace_gem.png)  
+新材料.  
+由两个时空碎片合成.
+![img_8.png](img_8.png)  
+可以升级下界合金装备.
+
+#### 时空工具组合:
+![](src/main/resources/assets/sakura_server/textures/item/timespace_hoe.png)
+![](src/main/resources/assets/sakura_server/textures/item/timespace_pickaxe.png)
+![](src/main/resources/assets/sakura_server/textures/item/timespace_shovel.png)
+![](src/main/resources/assets/sakura_server/textures/item/timespace_sword.png)
+![](src/main/resources/assets/sakura_server/textures/item/timespace_axe.png)  
+基础攻击力:10,攻速:1.6,耐久:2568,挖掘速度:12,挖掘等级:5.  
+beta:与下界合金锤和时空宝石与原下界合金工具合成.
+![img_10.png](img_10.png)  
+todo: 可以继承附魔效果/在锻造台锻造.
+
+#### 死亡卷轴:
+![](src/main/resources/assets/sakura_server/textures/item/death_scroll.png)  
+可以回到上次死亡的位置.
+![img_9.png](img_9.png)  
+
+#### 下界合金锤:
+![](src/main/resources/assets/sakura_server/textures/item/netherite_hammer.png)  
+合成材料.  
+![img_11.png](img_11.png)
+
+#### 无限火箭:
+可以无限放飞的火箭!!!  
+不绑定人!!!
+
+### 新附魔:
+
+#### 强化锋利,亡灵杀手,节肢杀手,力量:
+
+均为原版加强版.有大幅度的增强.
+
+#### 教育:
+
+怪物掉落更多的经验值. 额外掉落等级*原本经验值.
+
+
 ## 1.20.4.3 beta5.2:
 
 巨幅优化物品分类者性能开销.

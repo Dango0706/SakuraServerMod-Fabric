@@ -44,5 +44,6 @@
 	"suggests": {
 		"yet-another-config-lib-fabric": "*",
 		"modmenu": "*"
-	}
+	},
+	"accessWidener" : "sakura_server.accesswidener"
 }

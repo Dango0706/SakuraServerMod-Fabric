@@ -1,6 +1,6 @@
 package me.tuanzi.items.foods;
 
-import me.tuanzi.items.SakuraFoodItem;
+import me.tuanzi.items.utils.SakuraFoodItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;

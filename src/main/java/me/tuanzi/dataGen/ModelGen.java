@@ -13,12 +13,14 @@ public class ModelGen extends FabricModelProvider {
     public ModelGen(FabricDataOutput output) {
         super(output);
     }
-
+    //block
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(LIFT);
         blockStateModelGenerator.registerSimpleCubeAll(ANGEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(SORTER);
+        blockStateModelGenerator.registerSimpleCubeAll(TIMESPACE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(STELLAR_PROMISE_ORE);
     }
 
     @Override
@@ -39,9 +41,32 @@ public class ModelGen extends FabricModelProvider {
         itemModelGenerator.register(COMPRESSED_COPPER_7, Models.GENERATED);
         itemModelGenerator.register(COMPRESSED_COPPER_8, Models.GENERATED);
         itemModelGenerator.register(COMPRESSED_COPPER_9, Models.GENERATED);
+        itemModelGenerator.register(DRAW_SOMETHING, Models.GENERATED);
+        itemModelGenerator.register(DRAW_BLUE_SOMETHING, Models.GENERATED);
+        itemModelGenerator.register(DRAW_PURPLE_SOMETHING, Models.GENERATED);
+        itemModelGenerator.register(DRAW_GOLDEN_SOMETHING, Models.GENERATED);
+        itemModelGenerator.register(DREAM_KEY, Models.GENERATED);
+        itemModelGenerator.register(TEN_DREAM_KEY, Models.GENERATED);
+        itemModelGenerator.register(STELLAR_PROMISE, Models.GENERATED);
+        itemModelGenerator.register(TEN_STELLAR_PROMISE, Models.GENERATED);
         itemModelGenerator.register(ANGEL_BLOCK_FRAMEWORK, Models.GENERATED);
+        itemModelGenerator.register(REPLICATORS, Models.GENERATED);
+        itemModelGenerator.register(VAST_STAR, Models.GENERATED);
+        itemModelGenerator.register(TIMESPACE_SHARDS, Models.GENERATED);
+        itemModelGenerator.register(TIMESPACE_GEM, Models.GENERATED);
+        itemModelGenerator.register(DEATH_SCROLL, Models.GENERATED);
+        itemModelGenerator.register(NETHERITE_HAMMER, Models.GENERATED);
+        //tools
         itemModelGenerator.register(DRAGON_SWORD, Models.HANDHELD);
         itemModelGenerator.register(STARDUST_WAND, Models.HANDHELD);
+        itemModelGenerator.register(GAMBLING_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ANTIMATTER_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(TIMESPACE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(TIMESPACE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(TIMESPACE_HOE, Models.HANDHELD);
+        itemModelGenerator.register(TIMESPACE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(TIMESPACE_SHOVEL, Models.HANDHELD);
+        //test
         itemModelGenerator.register(TEST_ITEM, Models.HANDHELD);
     }
 

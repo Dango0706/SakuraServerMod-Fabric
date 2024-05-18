@@ -1,6 +1,7 @@
 package me.tuanzi.items.swords;
 
-import me.tuanzi.items.SakuraSword;
+import me.tuanzi.items.utils.CanNotBeCopy;
+import me.tuanzi.items.utils.SakuraSword;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import net.minecraft.world.World;
 
 import static me.tuanzi.SakuraServer.*;
 
-public class DragonSword extends SakuraSword {
+public class DragonSword extends SakuraSword implements CanNotBeCopy {
 
     public DragonSword() {
         super(LEG_TOOLS, 8, 1.6f, new Settings(), LEG_TOOLS.getRarity(),

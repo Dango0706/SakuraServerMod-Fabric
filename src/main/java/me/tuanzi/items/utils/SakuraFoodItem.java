@@ -1,4 +1,4 @@
-package me.tuanzi.items;
+package me.tuanzi.items.utils;
 
 public class SakuraFoodItem extends SakuraItem {
 

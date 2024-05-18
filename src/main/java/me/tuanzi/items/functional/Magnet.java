@@ -1,6 +1,6 @@
 package me.tuanzi.items.functional;
 
-import me.tuanzi.items.SakuraItem;
+import me.tuanzi.items.utils.SakuraItem;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ItemEntity;

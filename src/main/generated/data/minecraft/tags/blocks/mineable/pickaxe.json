@@ -3,6 +3,8 @@
   "values": [
     "sakura_server:lift",
     "sakura_server:angel_block",
-    "sakura_server:sorter"
+    "sakura_server:sorter",
+    "sakura_server:timespace_ore",
+    "sakura_server:stellar_promise_ore"
   ]
 }

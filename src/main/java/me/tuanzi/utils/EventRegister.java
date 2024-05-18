@@ -10,6 +10,7 @@ import me.tuanzi.events.*;
 import me.tuanzi.features.events.BlockBreak;
 import me.tuanzi.features.events.PlayerDeath;
 import me.tuanzi.items.events.FunctionalItemEvents;
+import me.tuanzi.items.events.ToolItemEvents;
 import me.tuanzi.stats.events.DamageStats;
 import me.tuanzi.stats.events.PlayerBreakBlock;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
@@ -26,6 +27,8 @@ public class EventRegister {
         UseItemCallback.EVENT.register(new FunctionalItemEvents());
         ServerLivingEntityEvents.AFTER_DEATH.register(new FunctionalItemEvents());
         PlayerTickEvent.EVENT.register(new FunctionalItemEvents());
+        EntityTickEvent.EVENT.register(new FunctionalItemEvents());
+        PlayerBlockBreakEvents.BEFORE.register(new ToolItemEvents());
         //block
         PlayerJumpEvent.EVENT.register(new LiftEvent());
         PlayerTickEvent.EVENT.register(new LiftEvent());

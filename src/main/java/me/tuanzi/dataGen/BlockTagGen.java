@@ -8,7 +8,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.SakuraServer.MODID;
+import static net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager.getBlockTag;
 
 public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
 
@@ -31,6 +32,18 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider {
         );
         getTagBuilder(BlockTags.PICKAXE_MINEABLE).add(
                 new Identifier(MODID, "sorter")
+        );
+        getTagBuilder(getBlockTag(4)).add(
+                new Identifier(MODID, "timespace_ore")
+        );
+        getTagBuilder(BlockTags.PICKAXE_MINEABLE).add(
+                new Identifier(MODID, "timespace_ore")
+        );
+        getTagBuilder(getBlockTag(5)).add(
+                new Identifier(MODID, "stellar_promise_ore")
+        );
+        getTagBuilder(BlockTags.PICKAXE_MINEABLE).add(
+                new Identifier(MODID, "stellar_promise_ore")
         );
 
     }

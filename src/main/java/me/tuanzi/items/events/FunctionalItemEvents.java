@@ -1,9 +1,11 @@
 package me.tuanzi.items.events;
 
+import me.tuanzi.events.EntityTickEvent;
 import me.tuanzi.events.PlayerTickEvent;
-import me.tuanzi.items.SakuraItem;
+import me.tuanzi.items.utils.SakuraItem;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
@@ -33,7 +35,7 @@ import java.util.UUID;
 import static me.tuanzi.SakuraServer.SOUL_GEM;
 import static me.tuanzi.SakuraServer.printDebugLog;
 
-public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath, PlayerTickEvent {
+public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath, PlayerTickEvent, EntityTickEvent {
 
     @Override
     public TypedActionResult<ItemStack> interact(PlayerEntity player, World world, Hand hand) {
@@ -154,6 +156,11 @@ public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntity
             }
         }
 
+
+    }
+
+    @Override
+    public void tick(Entity entity) {
 
     }
 }

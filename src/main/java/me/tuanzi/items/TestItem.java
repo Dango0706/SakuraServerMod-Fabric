@@ -1,5 +1,6 @@
 package me.tuanzi.items;
 
+import me.tuanzi.items.utils.SakuraItem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -8,7 +9,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class TestItem extends SakuraItem{
+public class TestItem extends SakuraItem {
 
 
     public TestItem(Settings settings) {

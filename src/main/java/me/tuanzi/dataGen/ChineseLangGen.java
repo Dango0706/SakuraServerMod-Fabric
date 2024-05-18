@@ -24,6 +24,8 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add(LIFT, "电梯");
         translationBuilder.add(ANGEL_BLOCK, "天使方块");
         translationBuilder.add(SORTER, "物品分类者");
+        translationBuilder.add(TIMESPACE_ORE, "时空矿石");
+        translationBuilder.add(STELLAR_PROMISE_ORE, "星辰之石");
         translationBuilder.add("block.sakura_server.angel_block.on", "现在启动范围内飞行!");
         translationBuilder.add("block.sakura_server.angel_block.off", "现在关闭范围内飞行!");
         translationBuilder.add("block.sakura_server.angel_block.range", "飞行范围设置为:%d");
@@ -45,8 +47,25 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add(COMPRESSED_COPPER_8, "八级压缩铜锭");
         translationBuilder.add(COMPRESSED_COPPER_9, "九级压缩铜锭");
         translationBuilder.add(ANGEL_BLOCK_FRAMEWORK, "天使方块框架");
+        translationBuilder.add(DREAM_KEY, "梦境之钥");
+        translationBuilder.add(TEN_DREAM_KEY, "10连梦境之钥");
+        translationBuilder.add(STELLAR_PROMISE, "星辰之诺");
+        translationBuilder.add(TEN_STELLAR_PROMISE, "10连星辰之诺");
         translationBuilder.add(DRAGON_SWORD, "龙剑");
         translationBuilder.add(STARDUST_WAND, "星光魔杖");
+        translationBuilder.add(GAMBLING_PICKAXE, "赌狗镐");
+        translationBuilder.add(ANTIMATTER_PICKAXE, "反物质镐");
+        translationBuilder.add(REPLICATORS, "复制者");
+        translationBuilder.add(VAST_STAR, "浩瀚之星");
+        translationBuilder.add(TIMESPACE_SHARDS, "时空碎片");
+        translationBuilder.add(TIMESPACE_GEM, "时空宝石");
+        translationBuilder.add(TIMESPACE_AXE, "时空斧");
+        translationBuilder.add(TIMESPACE_PICKAXE, "时空镐");
+        translationBuilder.add(TIMESPACE_SWORD, "时空剑");
+        translationBuilder.add(TIMESPACE_SHOVEL, "时空锹");
+        translationBuilder.add(TIMESPACE_HOE, "时空锄");
+        translationBuilder.add(DEATH_SCROLL, "死亡卷轴");
+        translationBuilder.add(NETHERITE_HAMMER, "下界合金锤");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_owner", "您不是他的主人,无法绑定!");
         translationBuilder.add("item.sakura_server.soul_gem.fail.not_tamed", "他还没被驯服呢!无法绑定");
         translationBuilder.add("item.sakura_server.soul_gem.fail.has_entity", "这个灵魂石已经有绑定了!");
@@ -71,10 +90,25 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc4", "给自己的宠物恢复8点生命值!");
         translationBuilder.add("item.sakura_server.stardust_wand.skill.desc5", "蹲下则对其他玩家以及其他玩家的宠物也生效!");
         translationBuilder.add("item.sakura_server.magnet.desc", "右键控制开关,潜行右键开关粒子显示");
+        translationBuilder.add("item.sakura_server.replicators.desc", "失去了某些力量,只能复制出最原始的物品.");
+        translationBuilder.add("item.sakura_server.death_scroll.not_death", "你没有死亡过哦~");
+        translationBuilder.add("item.sakura_server.death_scroll.not_dimension", "维度不同,无法传送!");
+        translationBuilder.add("item.sakura_server.dream_key.desc", "哇哦~你获得了梦想的钥匙,右键进行单抽!");
+        translationBuilder.add("item.sakura_server.ten_dream_key.desc", "哇哦~你获得了梦想的钥匙,右键进行十连抽!");
+        translationBuilder.add("item.sakura_server.stellar_promise.desc", "哇哦~你获得了星辰的馈赠,右键进行单抽!");
+        translationBuilder.add("item.sakura_server.ten_stellar_promise.desc", "哇哦~你获得了星辰的馈赠,右键进行十连抽!");
+        translationBuilder.add("item.sakura_server.see_pool", "潜行右键以查看卡池信息.");
+        //customName
+        translationBuilder.add("item.sakura_server.infinite_firework", "无限火箭");
         //enchantment
         translationBuilder.add(SOUL_BOUND, "§6灵魂绑定");
         translationBuilder.add(VEIN_MINE, "§a连锁挖矿");
         translationBuilder.add("enchantment.sakura_server.vein_mine.need_food", "你打算饿死你自己?吃点东西在连锁挖矿吧!");
+        translationBuilder.add(ADVANCED_SHARPNESS, "强化锋利");
+        translationBuilder.add(ADVANCED_SMITE, "强化亡灵杀手");
+        translationBuilder.add(ADVANCED_BANE_OF_ARTHROPODS, "强化节肢杀手");
+        translationBuilder.add(ADVANCED_POWER, "强化力量");
+        translationBuilder.add(EDUCATION, "教育");
         //effect
         translationBuilder.add(LIFT_CD, "电梯使用冷却");
         translationBuilder.add(DRAGON_SWORD_EFFECT, "龙怒");
@@ -104,5 +138,15 @@ public class ChineseLangGen extends FabricLanguageProvider {
         translationBuilder.add("stat.sakura_server.total_player_damage_taken", "受到来自玩家的总伤害");
         translationBuilder.add("stat.sakura_server.total_player_damage_caused", "对玩家造成的总伤害");
         translationBuilder.add("stat.sakura_server.place_block_count", "放置方块的数量");
+        translationBuilder.add("stat.sakura_server.draw_blue_count", "抽到3星物品的数量");
+        translationBuilder.add("stat.sakura_server.draw_purple_count", "抽到4星物品的数量");
+        translationBuilder.add("stat.sakura_server.draw_golden_count", "抽到5星物品的数量");
+
+        //pool
+        translationBuilder.add("pool.up_golden", "§6=====此卡池金色Up!=====");
+        translationBuilder.add("pool.golden", "§e=====此卡池金色=====");
+        translationBuilder.add("pool.up_purple", "=====此卡池紫色Up!=====");
+        translationBuilder.add("pool.purple", "§d=====此卡池紫色Up!=====");
+        translationBuilder.add("pool.blue", "§b=====此卡池其余物品=====");
     }
 }

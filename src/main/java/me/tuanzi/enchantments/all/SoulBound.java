@@ -1,4 +1,4 @@
-package me.tuanzi.enchantments;
+package me.tuanzi.enchantments.all;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

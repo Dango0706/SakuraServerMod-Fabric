@@ -1,4 +1,4 @@
-package me.tuanzi.items;
+package me.tuanzi.items.utils;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static me.tuanzi.items.ItemUtils.getColor;
+import static me.tuanzi.items.utils.ItemUtils.getColor;
 
 public class SakuraSword extends SwordItem {
 

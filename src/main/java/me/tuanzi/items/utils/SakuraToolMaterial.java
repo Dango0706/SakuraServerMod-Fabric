@@ -1,4 +1,4 @@
-package me.tuanzi.items.swords;
+package me.tuanzi.items.utils;
 
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.item.*;
@@ -7,10 +7,49 @@ import net.minecraft.recipe.Ingredient;
 public class SakuraToolMaterial implements ToolMaterial {
 
     private final int Rarity;
+    private final int MiningLevel;
+    private final int Durability;
+    private final float miningSpeed;
+    private final Ingredient RepairIngredient;
 
     public SakuraToolMaterial(int rarity) {
         Rarity = rarity;
+        MiningLevel = rarity + 2;
+        Durability = 700 + 600 * Rarity;
+        miningSpeed = 3.0f + 1.5f * Rarity;
+        RepairIngredient = Ingredient.EMPTY;
     }
+    public SakuraToolMaterial(int rarity,int miningLevel) {
+        Rarity = rarity;
+        MiningLevel = miningLevel;
+        Durability = 700 + 600 * Rarity;
+        miningSpeed = 3.0f + 1.5f * Rarity;
+        RepairIngredient = Ingredient.EMPTY;
+    }
+
+    public SakuraToolMaterial(int rarity, int miningLevel, int durability) {
+        Rarity = rarity;
+        MiningLevel = miningLevel;
+        Durability = durability;
+        miningSpeed = 3.0f + 1.5f * Rarity;
+        RepairIngredient = Ingredient.EMPTY;
+    }
+
+    public SakuraToolMaterial(int rarity, int miningLevel, int durability, Ingredient repairIngredient) {
+        Rarity = rarity;
+        MiningLevel = miningLevel;
+        Durability = durability;
+        miningSpeed = 3.0f + 1.5f * Rarity;
+        RepairIngredient = repairIngredient;
+    }
+    public SakuraToolMaterial(int rarity, int miningLevel, int durability,float miningSpeed, Ingredient repairIngredient) {
+        Rarity = rarity;
+        MiningLevel = miningLevel;
+        Durability = durability;
+        this.miningSpeed = miningSpeed;
+        RepairIngredient = repairIngredient;
+    }
+
 
     /**
      * {@return the total amount of durability a {@link ToolItem } using this {@link ToolMaterial} has}
@@ -22,7 +61,7 @@ public class SakuraToolMaterial implements ToolMaterial {
     @Override
     public int getDurability() {
 
-        return 700 + 600 * Rarity;
+        return Durability;
     }
 
     /**
@@ -33,7 +72,7 @@ public class SakuraToolMaterial implements ToolMaterial {
      */
     @Override
     public float getMiningSpeedMultiplier() {
-        return 3.0f + 1.5f * Rarity;
+        return miningSpeed;
     }
 
     /**
@@ -55,7 +94,7 @@ public class SakuraToolMaterial implements ToolMaterial {
      */
     @Override
     public int getMiningLevel() {
-        return 2 + Rarity;
+        return MiningLevel;
     }
 
     /**
@@ -80,7 +119,7 @@ public class SakuraToolMaterial implements ToolMaterial {
      */
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.EMPTY;
+        return RepairIngredient;
     }
 
     public int getRarity() {

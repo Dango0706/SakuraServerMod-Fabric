@@ -1,8 +1,10 @@
-package me.tuanzi.enchantments;
+package me.tuanzi.enchantments.tools;
 
+import me.tuanzi.items.utils.CanNotWithVeinMine;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemStack;
 
 public class VeinMine extends Enchantment {
 
@@ -28,5 +30,12 @@ public class VeinMine extends Enchantment {
     @Override
     public int getMaxPower(int level) {
         return super.getMinPower(level) + 50;
+    }
+
+    @Override
+    public boolean isAcceptableItem(ItemStack stack) {
+        if(stack.getItem() instanceof CanNotWithVeinMine)
+            return false;
+        return super.isAcceptableItem(stack);
     }
 }

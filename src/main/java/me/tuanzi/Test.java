@@ -14,10 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 import static me.tuanzi.SakuraServer.printDebugLog;
 
@@ -30,43 +27,35 @@ public class Test implements PlayerTickEvent, ServerLivingEntityEvents.AllowDama
     private Box searchArea;
 
     public static void main(String[] args) {
-        float amount = 10;
-        float f;
-        float g;
-        float h;
-        int i;
-        int j;
-        int level = 2;
-        g = amount;
-        i = (level + 1) * 5;
-        j = 25 - (i);
-        f = amount * j;
-        amount = Math.max(f / 25.0f, 0.0f);
-        h = g - amount;
-        /*
-        * 4.0
-        100.0
-        10.0
-        6.0
-        15
-        10
-        * */
-        System.out.println(amount);
-        System.out.println(f);
-        System.out.println(g);
-        System.out.println(h);
-        System.out.println(i);
-        System.out.println(j);
-        if ((h = (g = amount) - (amount = Math.max((f = amount * (float) (j = 25 - (i = (level + 1) * 5))) / 25.0f, 0.0f))) > 0.0f) {
-/*            System.out.println(amount);
-            System.out.println(f);
-            System.out.println(g);
-            System.out.println(h);
-            System.out.println(i);
-            System.out.println(j);*/
+
+//        int goldCount = 85; // 可以更改这个值来测试不同抽卡总数的出货概率
+//        double probability = calculateRewardProbability(goldCount);
+//        System.out.println("抽卡总数为:" + goldCount + " 时，出货概率为:" + probability * 100 + "%");
+        double damage = 7.5;
+        double a = 3.0 * damage;
+        System.out.println(a + new Random().nextInt((int) (a / 2 + 2)));
+        System.out.println(a);
+        System.out.println(a + a /2 + 2);
 
 
+    }
+
+
+
+    public static double calculateRewardProbability(int goldCount) {
+        double rewardProbability;
+        if (goldCount < 73) {
+            // 在第73抽之前，出货概率稳步增加至35.1635%
+            rewardProbability = 0.006 + (0.351635 - 0.006) * goldCount / 73;
+        } else if (goldCount < 90) {
+            // 在第73抽到第90抽之间，出货概率急剧上升
+            // 这里使用线性逼近，实际情况可能需要更复杂的函数来拟合
+            rewardProbability = 0.351635 + (1 - 0.351635) * (goldCount - 73) / (90 - 73);
+        } else {
+            // 在第90抽及以后，出货概率达到100%
+            rewardProbability = 1.0;
         }
+        return rewardProbability;
     }
 
     /**
@@ -81,6 +70,7 @@ public class Test implements PlayerTickEvent, ServerLivingEntityEvents.AllowDama
      */
     @Override
     public boolean allowDamage(LivingEntity entity, DamageSource source, float amount) {
+//        printDebugLog("上次伤害" + en);
         printDebugLog("计算前:" + amount);
         return true;
     }

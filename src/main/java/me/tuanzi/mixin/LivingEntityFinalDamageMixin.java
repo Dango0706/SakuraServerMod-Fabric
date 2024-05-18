@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 
@@ -28,10 +27,16 @@ public abstract class LivingEntityFinalDamageMixin extends Entity implements Att
     }
 
 
-    @Inject(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;modifyAppliedDamage(Lnet/minecraft/entity/damage/DamageSource;F)F", shift = At.Shift.AFTER))
+/*    @Inject(method = "applyDamage", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;modifyAppliedDamage(Lnet/minecraft/entity/damage/DamageSource;F)F", shift = At.Shift.AFTER))
     public void applyDamage(DamageSource source, float amount, CallbackInfo ci) {
         LivingEntityFinalDamage.EVENT.invoker().applyDamage((LivingEntity) (Object) this, source, amount);
+    }*/
+
+    @Inject(method = "modifyAppliedDamage", at = @At(value = "RETURN"))
+    public void applyDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {
+        LivingEntityFinalDamage.EVENT.invoker().applyDamage((LivingEntity) (Object) this, source, amount);
     }
+
     //todo
     @Inject(method = "modifyAppliedDamage", at = @At(value = "HEAD"))
     protected void modifyAppliedDamage(DamageSource source, float amount, CallbackInfoReturnable<Float> cir) {

@@ -1,6 +1,7 @@
 package me.tuanzi.items.functional;
 
-import me.tuanzi.items.SakuraItem;
+import me.tuanzi.items.utils.CanNotBeCopy;
+import me.tuanzi.items.utils.SakuraItem;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
@@ -9,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SoulGem extends SakuraItem {
+public class SoulGem extends SakuraItem implements CanNotBeCopy {
 
     public SoulGem(Settings settings) {
         super(settings);
