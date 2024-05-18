@@ -102,6 +102,7 @@ public class Draw {
         bluePool.add(new ItemStack(Items.GOLDEN_APPLE, 8));
         bluePool.add(new ItemStack(EMERALD_APPLE, 16));
         bluePool.add(new ItemStack(Items.NETHERITE_INGOT));
+        bluePool.add(new ItemStack(Items.LEATHER,32));
     }
 
     private static void addSamePurple(ItemStack itemStack) {

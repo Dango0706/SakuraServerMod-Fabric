@@ -43,11 +43,14 @@ public class TenDreamKey extends SakuraItem implements CanNotBeCopy {
             if (user.isSneaking()) {
                 searchPool(user, armorUpGoldPool, armorGoldPool, armorUpPurplePool, armorPurplePool);
 
-            } else
+            } else{
                 pullTen(user, 2);
+                if(!user.isCreative() || !user.isSpectator())
+                    user.getStackInHand(hand).decrement(1);
+            }
+
         }
-        if(!user.isCreative() || !user.isSpectator())
-            user.getStackInHand(hand).decrement(1);
+
         return super.use(world, user, hand);
     }
 }

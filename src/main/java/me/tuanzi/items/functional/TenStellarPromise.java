@@ -42,11 +42,14 @@ public class TenStellarPromise extends SakuraItem implements CanNotBeCopy {
         if(!world.isClient){
             if(user.isSneaking()){
                 searchPool(user, weaponUpGoldPool, weaponGoldPool, weaponUpPurplePool, weaponPurplePool);
-            }else
+            }else{
                 pullTen(user, 1);
+                if(!user.isCreative() || !user.isSpectator())
+                    user.getStackInHand(hand).decrement(1);
+            }
+
         }
-        if(!user.isCreative() || !user.isSpectator())
-            user.getStackInHand(hand).decrement(1);
+
         return super.use(world, user, hand);
     }
 
