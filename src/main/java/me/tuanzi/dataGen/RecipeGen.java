@@ -16,7 +16,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.*;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.items.ToolRegistry.*;
+import static me.tuanzi.utils.Constants.MODID;
 
 public class RecipeGen extends FabricRecipeProvider {
 
@@ -196,8 +199,8 @@ public class RecipeGen extends FabricRecipeProvider {
                 .input('a', Items.NETHERITE_INGOT)
                 .input('b', Items.NETHERITE_BLOCK)
                 .input('c', Items.STICK)
-                .criterion(FabricRecipeProvider.hasItem( Items.NETHERITE_INGOT),
-                        FabricRecipeProvider.conditionsFromItem( Items.NETHERITE_INGOT))
+                .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_INGOT))
                 .criterion(FabricRecipeProvider.hasItem(Items.NETHERITE_BLOCK),
                         FabricRecipeProvider.conditionsFromItem(Items.NETHERITE_BLOCK))
                 .criterion(FabricRecipeProvider.hasItem(Items.STICK),

@@ -19,8 +19,8 @@ import net.minecraft.util.Identifier;
 import java.util.ArrayList;
 import java.util.List;
 
-import static me.tuanzi.SakuraServer.MODID;
 import static me.tuanzi.draw.Draw.bluePool;
+import static me.tuanzi.utils.Constants.MODID;
 
 public class ItemUtils {
 

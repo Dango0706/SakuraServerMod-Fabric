@@ -13,7 +13,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import org.joml.Vector3f;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 public class DrawSomething extends SakuraItem {
     public static final String DRAW_RARITY = "DrawRarity";

@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 import java.util.*;
 
-import static me.tuanzi.SakuraServer.printDebugLog;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 public class Test implements PlayerTickEvent, ServerLivingEntityEvents.AllowDamage, LivingEntityModifyAppliedDamage.BEFORE_ENCHANTMENT, LivingEntityModifyAppliedDamage.BEFORE_EFFECT, LivingEntityFinalDamage {
 

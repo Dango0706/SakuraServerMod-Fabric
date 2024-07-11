@@ -9,8 +9,8 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 
-import static me.tuanzi.SakuraServer.ANGEl_WINGS;
-import static me.tuanzi.SakuraServer.HEALBANE;
+import static me.tuanzi.effects.EffectRegistry.ANGEl_WINGS;
+import static me.tuanzi.effects.EffectRegistry.HEALBANE;
 
 public class EffectsEvents implements LivingEntityHealEvent, LivingEntityEffectRemoveEvent {
     @Override

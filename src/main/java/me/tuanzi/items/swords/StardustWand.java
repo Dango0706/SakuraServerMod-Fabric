@@ -23,8 +23,8 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.UUID;
 
-import static me.tuanzi.SakuraServer.HEALBANE;
-import static me.tuanzi.SakuraServer.LEG_TOOLS;
+import static me.tuanzi.effects.EffectRegistry.HEALBANE;
+import static me.tuanzi.items.ToolRegistry.LEG_TOOLS;
 import static net.minecraft.util.UseAction.SPEAR;
 
 public class StardustWand extends SakuraSword  implements CanNotBeCopy {

@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static me.tuanzi.SakuraServer.EDUCATION;
+import static me.tuanzi.enchantments.EnchantmentRegistry.EDUCATION;
 
 @Mixin(LivingEntity.class)
 public abstract class EducationMixin extends Entity

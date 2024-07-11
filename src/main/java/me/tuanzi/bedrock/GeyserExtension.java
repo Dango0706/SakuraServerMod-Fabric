@@ -11,7 +11,7 @@ import org.geysermc.geyser.api.extension.Extension;
 import org.geysermc.geyser.api.item.custom.CustomItemOptions;
 import org.geysermc.geyser.api.item.custom.NonVanillaCustomItemData;
 
-import static me.tuanzi.SakuraServer.printDebugLog;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 public class GeyserExtension implements Extension {
 

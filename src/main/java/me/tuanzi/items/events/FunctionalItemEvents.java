@@ -32,8 +32,8 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.UUID;
 
-import static me.tuanzi.SakuraServer.SOUL_GEM;
-import static me.tuanzi.SakuraServer.printDebugLog;
+import static me.tuanzi.items.ItemsRegisty.SOUL_GEM;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 public class FunctionalItemEvents implements UseItemCallback, ServerLivingEntityEvents.AfterDeath, PlayerTickEvent, EntityTickEvent {
 

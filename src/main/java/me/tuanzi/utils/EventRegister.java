@@ -21,8 +21,11 @@ import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.loader.api.FabricLoader;
 
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
+
 public class EventRegister {
     public EventRegister() {
+        printDebugLog("加载事件...");
         //item
         UseItemCallback.EVENT.register(new FunctionalItemEvents());
         ServerLivingEntityEvents.AFTER_DEATH.register(new FunctionalItemEvents());

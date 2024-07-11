@@ -15,8 +15,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static me.tuanzi.SakuraServer.EMERALD_APPLE;
-import static me.tuanzi.SakuraServer.MOVE_VILLAGER;
+import static me.tuanzi.items.ItemsRegisty.EMERALD_APPLE;
+import static me.tuanzi.items.ItemsRegisty.MOVE_VILLAGER;
 
 @Mixin(VillagerEntity.class)
 public abstract class VillagerEntityMixin extends MerchantEntity

@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static me.tuanzi.SakuraServer.SOUL_BOUND;
+import static me.tuanzi.enchantments.EnchantmentRegistry.SOUL_BOUND;
 
 public class SoulBoundEvent implements ServerPlayerEvents.AfterRespawn, ServerLivingEntityEvents.AllowDeath {
     public static Map<String, ArrayList<ItemStack>> SoulBoundItems = new HashMap<>();

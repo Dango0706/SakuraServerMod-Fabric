@@ -15,7 +15,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.enchantments.EnchantmentRegistry.VEIN_MINE;
+import static me.tuanzi.utils.Constants.MODID;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
+import static me.tuanzi.utils.StatsRegisty.VEIN_MINE_COUNT;
 
 public class VeinMineEvent implements PlayerBlockBreakEvents.After {
 

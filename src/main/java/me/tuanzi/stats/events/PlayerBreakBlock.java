@@ -13,8 +13,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import static me.tuanzi.SakuraServer.BREAK_BLOCK_COUNT;
-import static me.tuanzi.SakuraServer.TOTAL_ONLINE_TIME;
+import static me.tuanzi.utils.StatsRegisty.BREAK_BLOCK_COUNT;
+import static me.tuanzi.utils.StatsRegisty.TOTAL_ONLINE_TIME;
+
 
 public class PlayerBreakBlock implements PlayerBlockBreakEvents.After, PlayerTickEvent  {
 

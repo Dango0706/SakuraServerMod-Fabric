@@ -11,7 +11,9 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.effects.EffectRegistry.DRAGON_SWORD_EFFECT;
+import static me.tuanzi.items.ToolRegistry.LEG_TOOLS;
+import static me.tuanzi.utils.SoundRegistry.DRAGON_ROAR_SOUND;
 
 public class DragonSword extends SakuraSword implements CanNotBeCopy {
 

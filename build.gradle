@@ -68,13 +68,14 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-
-
 	modImplementation("dev.isxander.yacl:yet-another-config-lib-fabric:3.3.2+1.20.4")    // YACL
 	modImplementation("com.terraformersmc:modmenu:9.0.0")    // ModMenu
 
 	compileOnly('org.geysermc.geyser:api:2.2.0-SNAPSHOT')// geyser
 	compileOnly('org.geysermc.floodgate:api:2.2.2-SNAPSHOT') //floodgate
+
+	// 添加SQLite JDBC驱动
+	modImplementation "org.xerial:sqlite-jdbc:3.34.0"
 
 
 }

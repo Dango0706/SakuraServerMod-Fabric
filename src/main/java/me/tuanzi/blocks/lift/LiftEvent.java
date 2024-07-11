@@ -11,7 +11,9 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.LIFT;
+import static me.tuanzi.effects.EffectRegistry.LIFT_CD;
+import static me.tuanzi.utils.StatsRegisty.*;
 
 public class LiftEvent implements PlayerJumpEvent, PlayerTickEvent {
 

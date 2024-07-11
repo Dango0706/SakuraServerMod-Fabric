@@ -19,7 +19,7 @@ import net.minecraft.world.World;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static me.tuanzi.SakuraServer.MAGNET_USE_SOUND;
+import static me.tuanzi.utils.SoundRegistry.MAGNET_USE_SOUND;
 
 public class Magnet extends SakuraItem implements Vanishable {
 

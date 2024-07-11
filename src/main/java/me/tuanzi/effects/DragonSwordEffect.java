@@ -4,7 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.item.ItemStack;
 
-import static me.tuanzi.SakuraServer.DRAGON_SWORD;
+import static me.tuanzi.items.ToolRegistry.DRAGON_SWORD;
 import static net.minecraft.entity.effect.StatusEffectCategory.BENEFICIAL;
 
 public class DragonSwordEffect extends StatusEffect {

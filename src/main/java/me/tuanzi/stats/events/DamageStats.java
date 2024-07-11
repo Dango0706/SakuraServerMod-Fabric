@@ -9,7 +9,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.utils.StatsRegisty.*;
 
 public class DamageStats implements ServerLivingEntityEvents.AllowDamage {
 

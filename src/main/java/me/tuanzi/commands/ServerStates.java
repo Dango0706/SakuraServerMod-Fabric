@@ -12,7 +12,7 @@ import net.minecraft.text.Text;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.utils.StatsRegisty.*;
 import static net.minecraft.server.command.CommandManager.literal;
 
 public class ServerStates {

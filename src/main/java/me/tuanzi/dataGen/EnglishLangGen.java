@@ -3,7 +3,14 @@ package me.tuanzi.dataGen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.ANGEL_BLOCK;
+import static me.tuanzi.blocks.BlockRegisty.LIFT;
+import static me.tuanzi.effects.EffectRegistry.*;
+import static me.tuanzi.enchantments.EnchantmentRegistry.SOUL_BOUND;
+import static me.tuanzi.enchantments.EnchantmentRegistry.VEIN_MINE;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.items.ToolRegistry.DRAGON_SWORD;
+import static me.tuanzi.items.ToolRegistry.STARDUST_WAND;
 
 public class EnglishLangGen extends FabricLanguageProvider {
 

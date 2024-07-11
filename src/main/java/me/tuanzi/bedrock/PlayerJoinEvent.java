@@ -10,6 +10,7 @@ import org.geysermc.geyser.api.GeyserApi;
 
 import static me.tuanzi.SakuraServer.*;
 import static me.tuanzi.bedrock.BedrockPlayerUtils.BEDROCK_UUIDS;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 public class PlayerJoinEvent implements ServerPlayConnectionEvents.Join {
 

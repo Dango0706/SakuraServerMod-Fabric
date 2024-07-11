@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
-import static me.tuanzi.SakuraServer.ANGEL_BLOCK;
+import static me.tuanzi.blocks.BlockRegisty.ANGEL_BLOCK;
 
 public class BlockBreak implements AttackBlockCallback {
 

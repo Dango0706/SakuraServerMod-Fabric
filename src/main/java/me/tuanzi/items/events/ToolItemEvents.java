@@ -18,8 +18,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static me.tuanzi.SakuraServer.ANTIMATTER_PICKAXE;
-import static me.tuanzi.SakuraServer.GAMBLING_PICKAXE;
+import static me.tuanzi.items.ToolRegistry.ANTIMATTER_PICKAXE;
+import static me.tuanzi.items.ToolRegistry.GAMBLING_PICKAXE;
 
 public class ToolItemEvents implements PlayerBlockBreakEvents.Before {
 

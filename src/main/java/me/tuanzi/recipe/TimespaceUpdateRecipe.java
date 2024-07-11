@@ -14,6 +14,9 @@ import org.apache.commons.compress.utils.Lists;
 import java.util.ArrayList;
 
 import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.items.ItemsRegisty.NETHERITE_HAMMER;
+import static me.tuanzi.items.ItemsRegisty.TIMESPACE_GEM;
+import static me.tuanzi.items.ToolRegistry.*;
 
 //todo:使用合成.
 public class TimespaceUpdateRecipe extends SpecialCraftingRecipe {

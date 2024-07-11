@@ -21,7 +21,8 @@ import net.minecraft.world.RedstoneView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import static me.tuanzi.SakuraServer.SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
+import static me.tuanzi.blocks.BlockRegisty.SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
+
 
 public class Sorter extends BlockWithEntity {
 

@@ -1,11 +1,11 @@
 package me.tuanzi.items.tools;
 
-import me.tuanzi.items.utils.SakuraPickaxe;
 import me.tuanzi.items.utils.CanNotWithMending;
 import me.tuanzi.items.utils.CanNotWithVeinMine;
+import me.tuanzi.items.utils.SakuraPickaxe;
 import net.minecraft.text.Text;
 
-import static me.tuanzi.SakuraServer.EPIC_TOOLS;
+import static me.tuanzi.items.ToolRegistry.EPIC_TOOLS;
 
 public class AntimatterPickaxe extends SakuraPickaxe implements CanNotWithMending, CanNotWithVeinMine {
 

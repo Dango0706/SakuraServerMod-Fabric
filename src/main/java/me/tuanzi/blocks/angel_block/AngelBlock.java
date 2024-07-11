@@ -23,7 +23,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import static me.tuanzi.SakuraServer.ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
+import static me.tuanzi.blocks.BlockRegisty.ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
 
 public class AngelBlock extends BlockWithEntity {
 

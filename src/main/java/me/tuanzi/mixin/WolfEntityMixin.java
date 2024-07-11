@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import static me.tuanzi.SakuraServer.SOUL_GEM;
+import static me.tuanzi.items.ItemsRegisty.SOUL_GEM;
 
 @Mixin(WolfEntity.class)
 public abstract class WolfEntityMixin extends TameableEntity implements Angerable {

@@ -6,7 +6,7 @@ import net.minecraft.world.PersistentState;
 import net.minecraft.world.PersistentStateManager;
 import net.minecraft.world.World;
 
-import static me.tuanzi.SakuraServer.MODID;
+import static me.tuanzi.utils.Constants.MODID;
 
 public class StateSaverAndLoader extends PersistentState {
 
@@ -52,9 +52,11 @@ public class StateSaverAndLoader extends PersistentState {
         // (Note: arbitrary choice to use 'World.OVERWORLD' instead of 'World.END' or 'World.NETHER'.  Any work)
         PersistentStateManager persistentStateManager = server.getWorld(World.OVERWORLD).getPersistentStateManager();
 
-        // The first time the following 'getOrCreate' function is called, it creates a brand new 'StateSaverAndLoader' and
-        // stores it inside the 'PersistentStateManager'. The subsequent calls to 'getOrCreate' pass in the saved
-        // 'StateSaverAndLoader' NBT on disk to our function 'StateSaverAndLoader::createFromNbt'.
+        /*
+         The first time the following 'getOrCreate' function is called, it creates a brand new 'StateSaverAndLoader' and
+         stores it inside the 'PersistentStateManager'. The subsequent calls to 'getOrCreate' pass in the saved
+         'StateSaverAndLoader' NBT on disk to our function 'StateSaverAndLoader::createFromNbt'.
+        */
         StateSaverAndLoader state = persistentStateManager.getOrCreate(type, MODID);
 
         // If state is not marked dirty, when Minecraft closes, 'writeNbt' won't be called and therefore nothing will be saved.

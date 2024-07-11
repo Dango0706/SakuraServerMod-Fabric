@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.*;
 
-import static me.tuanzi.SakuraServer.SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
+import static me.tuanzi.blocks.BlockRegisty.SORTER_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
 import static me.tuanzi.blocks.BlockUtils.getAnotherChest;
 import static me.tuanzi.blocks.sorter.Sorter.*;
 

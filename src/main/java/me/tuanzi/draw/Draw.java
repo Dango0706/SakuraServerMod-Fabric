@@ -16,10 +16,16 @@ import net.minecraft.text.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.ANGEL_BLOCK;
+import static me.tuanzi.blocks.BlockRegisty.TIMESPACE_ORE;
+import static me.tuanzi.enchantments.EnchantmentRegistry.*;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.items.ToolRegistry.*;
 import static me.tuanzi.items.display.DrawSomething.DRAW_RARITY;
 import static me.tuanzi.items.display.DrawSomething.DRAW_RESULT;
 import static me.tuanzi.items.utils.ItemUtils.getColor;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
+import static me.tuanzi.utils.StatsRegisty.*;
 
 public class Draw {
     public static final String WEAPON_GOLDEN_COUNT = "WeaponGoldenCount";

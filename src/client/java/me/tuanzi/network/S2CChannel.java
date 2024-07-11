@@ -2,7 +2,7 @@ package me.tuanzi.network;
 
 import net.minecraft.util.Identifier;
 
-import static me.tuanzi.SakuraServer.MODID;
+import static me.tuanzi.utils.Constants.MODID;
 
 public class S2CChannel {
 

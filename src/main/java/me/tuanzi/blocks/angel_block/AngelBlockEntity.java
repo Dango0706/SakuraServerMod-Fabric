@@ -10,10 +10,10 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-import static me.tuanzi.SakuraServer.ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
-import static me.tuanzi.SakuraServer.ANGEl_WINGS;
+import static me.tuanzi.blocks.BlockRegisty.ANGEL_BLOCK_ENTITY_BLOCK_ENTITY_TYPE;
 import static me.tuanzi.blocks.angel_block.AngelBlock.ANGEL_BLOCK_RANGE;
 import static me.tuanzi.blocks.angel_block.AngelBlock.ANGEL_BLOCK_USED;
+import static me.tuanzi.effects.EffectRegistry.ANGEl_WINGS;
 
 public class AngelBlockEntity extends BlockEntity {
 

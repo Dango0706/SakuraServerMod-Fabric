@@ -12,7 +12,7 @@ import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 
-import static me.tuanzi.SakuraServer.MODID;
+import static me.tuanzi.utils.Constants.MODID;
 import static net.minecraft.server.command.CommandManager.literal;
 
 public class RemoveNBT {

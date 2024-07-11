@@ -8,7 +8,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
-import static me.tuanzi.SakuraServer.MODID;
+import static me.tuanzi.utils.Constants.MODID;
 import static net.fabricmc.fabric.api.mininglevel.v1.MiningLevelManager.getBlockTag;
 
 public class BlockTagGen extends FabricTagProvider.BlockTagProvider {

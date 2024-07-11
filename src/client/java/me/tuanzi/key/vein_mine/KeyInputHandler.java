@@ -10,7 +10,7 @@ import net.minecraft.client.util.InputUtil;
 import net.minecraft.network.PacketByteBuf;
 import org.lwjgl.glfw.GLFW;
 
-import static me.tuanzi.SakuraServer.MODID;
+import static me.tuanzi.utils.Constants.MODID;
 
 public class KeyInputHandler {
 

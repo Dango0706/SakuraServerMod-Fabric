@@ -6,7 +6,9 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.*;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.items.ToolRegistry.*;
 
 public class ModelGen extends FabricModelProvider {
 

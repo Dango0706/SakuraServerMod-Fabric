@@ -12,8 +12,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import static me.tuanzi.SakuraServer.ADVANCED_POWER;
-import static me.tuanzi.SakuraServer.printDebugLog;
+import static me.tuanzi.enchantments.EnchantmentRegistry.ADVANCED_POWER;
+import static me.tuanzi.utils.LoggerUtils.printDebugLog;
 
 @Mixin(BowItem.class)
 public abstract class BowItemMixin extends RangedWeaponItem

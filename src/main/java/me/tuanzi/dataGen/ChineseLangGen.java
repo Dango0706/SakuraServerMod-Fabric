@@ -3,7 +3,11 @@ package me.tuanzi.dataGen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
-import static me.tuanzi.SakuraServer.*;
+import static me.tuanzi.blocks.BlockRegisty.*;
+import static me.tuanzi.effects.EffectRegistry.*;
+import static me.tuanzi.enchantments.EnchantmentRegistry.*;
+import static me.tuanzi.items.ItemsRegisty.*;
+import static me.tuanzi.items.ToolRegistry.*;
 
 public class ChineseLangGen extends FabricLanguageProvider {
     public ChineseLangGen(FabricDataOutput dataOutput) {
