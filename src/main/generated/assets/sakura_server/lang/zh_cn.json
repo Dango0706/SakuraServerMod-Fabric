@@ -1,0 +1,21 @@
+{
+  "block.sakura_server.cocoa_beans_block": "可可豆块",
+  "block.sakura_server.compressed_hay_block_1": "一级压缩干草捆",
+  "item.sakura_server.beetroot_bundle": "甜菜捆",
+  "item.sakura_server.bronze_ingot": "青铜",
+  "item.sakura_server.carrot_bundle": "胡萝卜捆",
+  "item.sakura_server.cocoa_beans_bundle": "可可豆捆",
+  "item.sakura_server.debug_item": "开发者工具",
+  "item.sakura_server.poisonous_potato_bundle": "毒马铃薯捆",
+  "item.sakura_server.potato_bundle": "马铃薯捆",
+  "item.sakura_server.resurrection_amulet": "复生护符",
+  "item.sakura_server.sweet_berries_bundle": "甜浆果捆",
+  "item_group.bundle_and_compressed": "樱花服务器-压缩物品",
+  "item_group.display_name": "樱花服务器",
+  "tooltip.sakura.press_shift": "<按shift显示更多..>",
+  "tooltip.sakura.resurrection_amulet.info1": "复活时消耗30级经验保存物品栏.",
+  "tooltip.sakura.resurrection_amulet.not_exp": "啊哦,好像你无法发动护符的力量呢~",
+  "tooltip.sakura.resurrection_amulet.press_shift1": "在古老的传说中.",
+  "tooltip.sakura.resurrection_amulet.press_shift2": "复生护符能让持有者在死亡后重生",
+  "tooltip.sakura.resurrection_amulet.press_shift3": "继续未完成的使命."
+}

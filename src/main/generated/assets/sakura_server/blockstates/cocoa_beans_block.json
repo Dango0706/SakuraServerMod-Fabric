@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "sakura_server:block/cocoa_beans_block"
+    }
+  }
+}

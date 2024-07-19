@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "sakura_server:bronze_ingot"
+    },
+    "b": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "minecraft:diamond"
+    },
+    "d": {
+      "item": "minecraft:redstone_block"
+    },
+    "f": {
+      "item": "minecraft:ancient_debris"
+    }
+  },
+  "pattern": [
+    " ab",
+    "cdc",
+    "fcf"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sakura_server:resurrection_amulet"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cocoa_beans_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:cocoa_beans_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sakura_server:cocoa_beans_0"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cocoa_beans_bundle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sakura_server:cocoa_beans_0"
+    ]
+  }
+}

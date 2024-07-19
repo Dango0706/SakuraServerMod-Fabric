@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_potato_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:potato_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sakura_server:potato_0"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_potato_bundle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sakura_server:potato_0"
+    ]
+  }
+}

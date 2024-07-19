@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    },
+    {
+      "item": "sakura_server:cocoa_beans_bundle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "sakura_server:cocoa_beans_block"
+  }
+}

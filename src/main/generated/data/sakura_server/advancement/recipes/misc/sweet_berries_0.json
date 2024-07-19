@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sweet_berries_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:sweet_berries_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sakura_server:sweet_berries_0"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sweet_berries_bundle"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sakura_server:sweet_berries_0"
+    ]
+  }
+}

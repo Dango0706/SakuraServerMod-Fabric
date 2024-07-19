@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "sakura_server:block/compressed_hay_block_1"
+  }
+}

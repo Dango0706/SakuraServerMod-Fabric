@@ -1,0 +1,109 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beetroot_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:beetroot_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_carrot_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:carrot_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cocoa_beans_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:cocoa_beans_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_compressed_hay_block_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:compressed_hay_block_1"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_gold_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:gold_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_poisonous_potato_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:poisonous_potato_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sweet_berries_bundle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sakura_server:sweet_berries_bundle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sakura_server:resurrection_amulet_1"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_ingot",
+      "has_gold_ingot",
+      "has_poisonous_potato_bundle",
+      "has_compressed_hay_block_1",
+      "has_beetroot_bundle",
+      "has_sweet_berries_bundle",
+      "has_carrot_bundle",
+      "has_cocoa_beans_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sakura_server:resurrection_amulet_1"
+    ]
+  }
+}

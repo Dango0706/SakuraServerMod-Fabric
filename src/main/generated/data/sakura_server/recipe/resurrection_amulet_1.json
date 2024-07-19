@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:iron_ingot"
+    },
+    "b": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "sakura_server:poisonous_potato_bundle"
+    },
+    "d": {
+      "item": "sakura_server:compressed_hay_block_1"
+    },
+    "e": {
+      "item": "sakura_server:beetroot_bundle"
+    },
+    "f": {
+      "item": "sakura_server:sweet_berries_bundle"
+    },
+    "g": {
+      "item": "sakura_server:carrot_bundle"
+    },
+    "h": {
+      "item": "sakura_server:cocoa_beans_block"
+    }
+  },
+  "pattern": [
+    " ab",
+    "cde",
+    "fgh"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sakura_server:resurrection_amulet"
+  }
+}
